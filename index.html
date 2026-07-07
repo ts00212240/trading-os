@@ -787,6 +787,43 @@ const PORTFOLIO_STATE = {
         { label:'規則 3', desc:'訊號可以果斷，成交可以耐心。不追價，但要有理想掛單' },
         { label:'規則 4', desc:'有系統條件時，恐懼不是停止理由' }
       ]},
+
+    // ── 2026-07-07 認知節點：SPCX 豪華摩天輪進場條件教訓 ────────────
+    { id:'EV_K10', date:'2026-07-07', type:'insight', emoji:'🚫',
+      title:'豪華摩天輪進場條件 — SPCX 教訓', strategy:'SPCX_Wheel',
+      equity:235438, sc:163788, ft:70650, ib:1000,
+      zoomMin:1,
+      status:'noted',
+      reason:'以 IV 高、權利金豐厚、報酬率漂亮為由進場 SPCX Put Spread，卻未事先確認「被打穿後是否願意承接」。SPCX 財報仍虧損，公司品質不符合豪華摩天輪承接條件。持有五天後確認無法承接，被迫迅速平倉出場，淨虧 -$1,168。',
+      outcome:'平倉出場，虧損 -$1,168。高權利金不是進場理由，可承接才是。',
+      stratNote:'豪華摩天輪 ≠ 高 IV 收租。核心是：被打穿後我願不願意承接。',
+      hypothesis:null,
+      validation:'進場前必先回答：「如果被打穿，我願不願意承接？」答案是否定，就不能因為 IV 高而進場。這個問題一旦問不出口，就是訊號。',
+      legs:[
+        { label:'條件 1', desc:'被打穿後，我願意以 Strike 承接股票' },
+        { label:'條件 2', desc:'承接後可順利進入深 ITM LEAPS / PMCC 週期' },
+        { label:'條件 3', desc:'此標的值得長期持有、產生 Theta 收益' },
+        { label:'條件 4', desc:'潛在最大虧損（承接成本−市值）系統可吸收' },
+        { label:'新規則', desc:'SPCX 只滿足「高權利金」，四條件均未通過。高 IV 誘惑不是進場理由。' }
+      ]},
+
+    // ── 2026-07-07 認知節點：黑天鵝保護腿生命週期轉倉 ────────────────
+    { id:'EV_K11', date:'2026-07-07', type:'insight', emoji:'🦢',
+      title:'黑天鵝保護腿生命週期 — 轉倉不是換倉，是接力', strategy:'SPY_BlackSwan',
+      equity:235438, sc:163788, ft:70650, ib:1000,
+      zoomMin:1,
+      status:'noted',
+      reason:'嘉信約 16 萬資產規模，新一輪 4 個月黑天鵝結構需要 SELL ×3 + BUY ×5。舊保護腿剩餘約 79 天，新 122 天保護腿必須建立，若不處理將出現保護斷層。決策：賣出舊 79 天 BUY PUT ×5 回收殘值，立即轉入新 122 天 BUY PUT ×5，維持尾部保護不中斷。',
+      outcome:'保護腿順利接力，黑天鵝系統無斷保，完成本週期轉倉。',
+      stratNote:'黑天鵝不是一次性避險，而是週期工程。保護腿有生命週期，需主動管理。',
+      hypothesis:null,
+      validation:'當 BUY PUT 剩餘 DTE 過短，且下一輪保護腿需要建立時，可用舊 BUY PUT 殘值支援新 BUY PUT。重點不是省錢，而是避免保護斷層。',
+      legs:[
+        { label:'規則 1', desc:'黑天鵝保護腿有生命週期，DTE 過短時需主動換期' },
+        { label:'規則 2', desc:'舊 BUY PUT 殘值可轉成新 BUY PUT 氧氣，不是浪費而是接力' },
+        { label:'規則 3', desc:'保護腿斷層風險 > 轉倉成本。寧願多付一點，不能讓尾部裸露' },
+        { label:'規則 4', desc:'這不是換倉，是黑天鵝系統的生命循環：舊腿→回收→新腿→延長 DTE→保持防線' }
+      ]},
   ],
 
 
@@ -857,13 +894,14 @@ const PORTFOLIO_STATE = {
       get surplus()     { return this.actualNAV - this.targetNAV },
       get achieveRate() { return +(this.actualNAV / this.targetNAV * 100).toFixed(2) },
       biggestProgress: 'QQQ 豪華摩天輪 2UP 部署 — 下跌觸發系統條件，果斷執行新一輪 Put Spread',
-      biggestMistake:  '（月中記錄，待月底封存）',
-      wouldChange:     '（月中記錄，待月底封存）',
+      biggestMistake:  'SPCX 無法貫徹豪華摩天輪策略。錯誤不是進場虧損，而是進場前沒有確認「是否願意承接」。只看到 IV 高、權利金豐厚、報酬率漂亮，卻忽略 SPCX 財報仍虧損、公司品質不符合豪華摩天輪承接條件。持有五天確認無法承接後迅速出場，淨虧 -$1,168。',
+      wouldChange:     '豪華摩天輪進場前必須先回答：「如果被打穿，我願不願意承接？」答案是否定，就不能因為 IV 高而進場。高權利金不是進場理由，可承接才是。',
       systemUpgrade:   'QQQ 2UP 下跌部署規則化',
-      noteToFuture:    '下跌不是自動恐慌，是候選訊號。\n\n觸發後先檢查：IV、Credit、Delta、DTE、舊輪獲利。訊號可以果斷，成交可以耐心。不追價，但要有理想掛單。\n\n有系統條件時，恐懼不是停止理由。\n\n你在 QQQ 單日明顯下跌時，怕沒成交、反覆改單、擔心下跌延續。但你還是執行了。系統開始產生成效。這就是對的。',
+      noteToFuture:    '下跌不是自動恐慌，是候選訊號。\n\n觸發後先檢查：IV、Credit、Delta、DTE、舊輪獲利。訊號可以果斷，成交可以耐心。不追價，但要有理想掛單。\n\n有系統條件時，恐懼不是停止理由。\n\n你在 QQQ 單日明顯下跌時，怕沒成交、反覆改單、擔心下跌延續。但你還是執行了。系統開始產生成效。這就是對的。\n\n黑天鵝不是買保險而已，它是生命循環。\n\n資產只有 16 萬時，不能用無限購買力去硬做新一輪 4 個月黑天鵝。當舊 BUY PUT 剩餘 79 天，新保護腿需要延長到 122 天，就必須把舊 PUT 的殘值轉成新 PUT 的氧氣。這次你不是亂換倉，而是在做保護腿接力。這代表你開始理解：避險不是單筆交易，而是週期工程。',
       milestones: [
         { icon:'🎡', label:'QQQ 2UP 首次部署 — 下跌觸發系統條件，雙輪同開' },
-        { icon:'📋', label:'認知節點建立 — 恐懼不是停止理由，系統條件才是' }
+        { icon:'📋', label:'認知節點建立 — 恐懼不是停止理由，系統條件才是' },
+        { icon:'🦢', label:'黑天鵝保護腿接力 — 舊 79 天 PUT 轉新 122 天，維持尾部防線不中斷' }
       ],
       status: 'active', archivedAt: null
     },
