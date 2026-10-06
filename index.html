@@ -330,11 +330,11 @@ const PORTFOLIO_STATE = {
   accounts: {
     ft: {
       name: '第一證券',
-      nav: 80363.16,
-      buyingPower: 30233.88,
-      cash: 80363,
-      dayChange: 1339.15,
-      lastUpdated: '2026-10-02 收盤',
+      nav: 80646.54,
+      buyingPower: 30363.54,
+      cash: 80646,
+      dayChange: 270.65,
+      lastUpdated: '2026-10-06 收盤',
       positions: [
         { tk:'QQQ LEAPS',    sh:'685C 2028/12·×1 買@179.50',        pr:'150.00', ch:'-14.00', chp:'(-8.54%)', pos:true,  col:'#1565C0', ic:'Q', status:'ok',   exp:'2028-12-19', spark:[159.75,167.30,170.74,161.50,154.00,154.00,164.00,164.00,150.00] },
         { tk:'QQQ C4 ✅',     sh:'709P/630P · 07/17獲利承接轉PMCC',    pr:'+228',   ch:'已實現', chp:'(30%)',    pos:true,  col:'#1B5E20', ic:'Q', status:'closed', exp:'2026-07-17', spark:[8.0,9.0,10.0,11.0,11.0,9.30,4.65,2.46,5.33] },
@@ -351,11 +351,11 @@ const PORTFOLIO_STATE = {
     },
     sc: {
       name: '嘉信理財',
-      nav: 186134.60,
+      nav: 190449.60,
       buyingPower: 74249.30,
       cash: 98274.60,
-      dayChange: 2846.50,
-      lastUpdated: '2026-10-02 收盤',
+      dayChange: 1775.00,
+      lastUpdated: '2026-10-06 收盤',
       positions: [
         { tk:'SPY LEAPS',    sh:'730C 2028/12·×6',                  pr:'131.00', ch:'+0.56',  chp:'(+0.43%)',  pos:true,  col:'#1565C0', ic:'S', status:'ok',     exp:'2028-12-19', spark:[139.15,139.61,137.52,132.42,131.14,135.00,134.30,130.44,131.00] },
         { tk:'SPY PMCC',     sh:'770C 08/14·×3 SELL @$4.82',        pr:'1.91',   ch:'-1.44',  chp:'(-43.0%)', pos:false, col:'#B71C1C', ic:'S', status:'ok',     exp:'2026-08-14', spark:[4.82,4.82,4.82,4.82,4.82,5.87,4.39,3.35,1.91] },
@@ -389,15 +389,17 @@ const PORTFOLIO_STATE = {
   ath: {
     // 2026-08-07 券商歷史圖校正 + 2022 資料降級：見 manualATHCorrection
     combined: {
-      currentATH:  { value: 267497.76, date: '2026-10-02', source: 'dailyEquity 驗證（SC 186,134.60 + FT 80,363.16 + IB 1,000）' },
-      previousATH: { value: 267400.97, date: '2026-09-22' },
+      currentATH:  { value: 272096.14, date: '2026-10-06', source: 'dailyEquity 驗證（SC 190,449.60 + FT 80,646.54 + IB 1,000）' },
+      previousATH: { value: 270082.03, date: '2026-10-05' },
       unverifiedATH: { value: 252654.52, date: '2022-11-16',
         note: '2026-08-07 重新檢查 2022 日記後，發現此 ATH 可能為資料誤植，暫不作為正式 ATH 基準。2022 年本金約 $147,000（嘉信約$100,000 + 第一約$47,000），無明確獲利紀錄達 $252,654。' },
       athHistory: [
         { value: 260876.14, date: '2025-02-21', note: '券商圖驗證 · 正式合計高點（嘉信203,914.47 + 第一56,961.67）' },
         { value: 263952.60, date: '2026-09-19', note: '首度突破 2025-02 官方合計 ATH（真·歷史新高）' },
         { value: 267400.97, date: '2026-09-22', note: '合計新高' },
-        { value: 267497.76, date: '2026-10-02', note: '合計歷史新高（dailyEquity 驗證 · 修正 stored 凍結於 2025-02 的錯誤）' }
+        { value: 267497.76, date: '2026-10-02', note: '合計歷史新高（dailyEquity 驗證 · 修正 stored 凍結於 2025-02 的錯誤）' },
+        { value: 270082.03, date: '2026-10-05', note: '合計歷史新高（連續刷新）' },
+        { value: 272096.14, date: '2026-10-06', note: '合計歷史新高（連續刷新）' }
       ]
     },
     sc: {
@@ -409,15 +411,17 @@ const PORTFOLIO_STATE = {
       ]
     },
     ft: {
-      currentATH:  { value: 80363.16, date: '2026-10-02' },
-      previousATH: { value: 79898.58, date: '2026-09-22' },
+      currentATH:  { value: 80646.54, date: '2026-10-06' },
+      previousATH: { value: 80407.43, date: '2026-10-05' },
       athHistory: [
         { value: 71191,    date: '2026-05-27', note: '第一證券舊高' },
         { value: 72420.31, date: '2026-08-06', note: '修復後首破（自動滾動）' },
         { value: 74505.42, date: '2026-08-21', note: '續創新高（dailyEquity）' },
         { value: 76643.71, date: '2026-09-19', note: '09-22 前的前一個 ATH' },
         { value: 79898.58, date: '2026-09-22', note: '第一證券前高' },
-        { value: 80363.16, date: '2026-10-02', note: '第一證券歷史新高（dailyEquity 驗證）' }
+        { value: 80363.16, date: '2026-10-02', note: '第一證券歷史新高（dailyEquity 驗證）' },
+        { value: 80407.43, date: '2026-10-05', note: '第一證券歷史新高（連續刷新）' },
+        { value: 80646.54, date: '2026-10-06', note: '第一證券歷史新高（連續刷新）' }
       ]
     },
     // ── 出入金分類（Total Return ATH 計算用）────────────────────────
@@ -478,13 +482,13 @@ const PORTFOLIO_STATE = {
     sc: { principal: 154000, spyBase: 708.78, spyShares: 217.27 },
     ft: { principal: 70000,  qqqBase: 648.04, qqqShares: 108.02 },
     livePrice: {
-      SPY:  769.64,   // 10/02 收盤 TV
-      QQQ:  749.58,   // 10/02 收盤 截圖
-      IBIT:  47.73,   // 10/02 收盤 截圖
-      BRKB: 502.65,   // 10/02 收盤 截圖
-      MSFT: 517.53,   // 10/02 收盤 TOS
+      SPY:  779.09,   // 10/06 收盤 TV
+      QQQ:  759.66,   // 10/06 收盤 截圖
+      IBIT:  48.49,   // 10/06 收盤 截圖
+      BRKB: 505.93,   // 10/06 收盤 截圖
+      MSFT: 529.30,   // 10/06 收盤 TOS
       SPCX: 143.69,   // 08/31 收盤 TOS
-      updatedAt: '2026-10-02',
+      updatedAt: '2026-10-06',
       // 'manual'=手動輸入；'tos_screenshot'=截圖解析；'tradingview'=MCP同步
       source: 'tos_screenshot'
     }
@@ -658,6 +662,8 @@ const PORTFOLIO_STATE = {
     { date:'2026-09-30', sc:183221.60, ft:78976.83, ib:1000, total:263198.43 },
     { date:'2026-10-01', sc:183288.10, ft:79008.20, ib:1000, total:263296.30 },
     { date:'2026-10-02', sc:186134.60, ft:80363.16, ib:1000, total:267497.76 },
+    { date:'2026-10-05', sc:188674.60, ft:80407.43, ib:1000, total:270082.03 },
+    { date:'2026-10-06', sc:190449.60, ft:80646.54, ib:1000, total:272096.14 },
   ],
 
   // ── 資產曲線圖資料（由 _deriveCurves() 從 dailyEquity 自動生成）──
@@ -687,7 +693,7 @@ const PORTFOLIO_STATE = {
       note:'✅ 07/01 成交 @$11.00 · 原GTC@6.94取消 · 改買OCT30 695P×5 · 675P SEP@5.09賣出滾入 · 121 DTE Phase2完成' },
     { id:'GTC_698P', desc:'SPY 698P BUY BACK × 3 · 第三組黑天鵝自動平倉',
       type:'buyback', orderDate:'2026-07-08', fillDate:null, fillPrice:null,
-      limitPrice:0.20, currentMark:0.90, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:0.20, currentMark:0.50, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'第三組 SELL 698P 買回單 · Theta 歸零等待中 · GTC @0.20' },
     { id:'GTC_700P_G3', desc:'SPY 700P NOV30 BUY × 5 · 第二組保護腿 rollover / 生命週期延續',
       type:'phase2', purpose:'第二組保護腿 rollover / 生命週期延續', action:'BUY TO OPEN',
@@ -704,11 +710,11 @@ const PORTFOLIO_STATE = {
       type:'phase2', purpose:'第四組黑天鵝尾部保護（配 729P 收租腿）', action:'BUY TO OPEN',
       contract:'SPY 705P', expiration:'2027-01-15', quantity:5,
       orderDate:'2026-09-16', fillDate:null, fillPrice:null,
-      limitPrice:5.52, currentMark:7.24, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:5.52, currentMark:5.83, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'BS_0916 尾部保護腿 · BUY 705P ×5 @5.52 GTC · 歷史新低權利金掛單 · 可能很晚才成交 · 配 729P ×3 SELL 收租腿(已成交 @9.41)' },
     { id:'GTC_729P_BUYBACK', desc:'SPY 729P NOV30 BUY BACK × 3 · 收租腿自動平倉',
       type:'buyback', orderDate:'2026-09-17', fillDate:null, fillPrice:null,
-      limitPrice:0.20, currentMark:5.415, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:0.20, currentMark:3.81, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'BS_0916 收租腿 729P ×3 買回單 · GTC @0.20 · Theta 歸零等待中' },
   ],
 
@@ -2064,7 +2070,7 @@ var _TV_SPY_BARS = [
   {"date":"2026-08-06","close":768.56},{"date":"2026-08-07","close":773.26},
   {"date":"2026-08-10","close":773.03},{"date":"2026-08-11","close":770.56},
   {"date":"2026-08-12","close":772.49},{"date":"2026-08-13","close":777.88},
-  {"date":"2026-08-14","close":776.34},{"date":"2026-08-17","close":772.67},{"date":"2026-08-18","close":767.45},{"date":"2026-08-19","close":769.06},{"date":"2026-08-20","close":762.60},{"date":"2026-08-21","close":765.72},{"date":"2026-08-24","close":763.47},{"date":"2026-08-25","close":765.91},{"date":"2026-08-26","close":766.08},{"date":"2026-08-27","close":771.10},{"date":"2026-08-28","close":769.35},{"date":"2026-08-31","close":767.05},{"date":"2026-09-01","close":761.78},{"date":"2026-09-02","close":765.16},{"date":"2026-09-03","close":773.17},{"date":"2026-09-04","close":770.19},{"date":"2026-09-08","close":765.96},{"date":"2026-09-09","close":762.40},{"date":"2026-09-10","close":757.83},{"date":"2026-09-11","close":764.29},{"date":"2026-09-12","close":760.88},{"date":"2026-09-15","close":757.39},{"date":"2026-09-16","close":754.05},{"date":"2026-09-17","close":762.60},{"date":"2026-09-18","close":761.69},{"date":"2026-09-19","close":773.50},{"date":"2026-09-22","close":773.38},{"date":"2026-09-23","close":767.81},{"date":"2026-09-24","close":767.18},{"date":"2026-09-25","close":771.35},{"date":"2026-09-28","close":765.61},{"date":"2026-09-29","close":764.20},{"date":"2026-09-30","close":762.63},{"date":"2026-10-01","close":763.99},{"date":"2026-10-02","close":769.64}
+  {"date":"2026-08-14","close":776.34},{"date":"2026-08-17","close":772.67},{"date":"2026-08-18","close":767.45},{"date":"2026-08-19","close":769.06},{"date":"2026-08-20","close":762.60},{"date":"2026-08-21","close":765.72},{"date":"2026-08-24","close":763.47},{"date":"2026-08-25","close":765.91},{"date":"2026-08-26","close":766.08},{"date":"2026-08-27","close":771.10},{"date":"2026-08-28","close":769.35},{"date":"2026-08-31","close":767.05},{"date":"2026-09-01","close":761.78},{"date":"2026-09-02","close":765.16},{"date":"2026-09-03","close":773.17},{"date":"2026-09-04","close":770.19},{"date":"2026-09-08","close":765.96},{"date":"2026-09-09","close":762.40},{"date":"2026-09-10","close":757.83},{"date":"2026-09-11","close":764.29},{"date":"2026-09-12","close":760.88},{"date":"2026-09-15","close":757.39},{"date":"2026-09-16","close":754.05},{"date":"2026-09-17","close":762.60},{"date":"2026-09-18","close":761.69},{"date":"2026-09-19","close":773.50},{"date":"2026-09-22","close":773.38},{"date":"2026-09-23","close":767.81},{"date":"2026-09-24","close":767.18},{"date":"2026-09-25","close":771.35},{"date":"2026-09-28","close":765.61},{"date":"2026-09-29","close":764.20},{"date":"2026-09-30","close":762.63},{"date":"2026-10-01","close":763.99},{"date":"2026-10-02","close":769.64},{"date":"2026-10-05","close":774.83},{"date":"2026-10-06","close":779.09}
 ]
 
 function fetchSPYHistory() {
@@ -5664,6 +5670,8 @@ function renderMonthlyResults(){
     if(c.isUnderlying || typeof c.realized!=='number') return
     var m=(c.closeDate||'').slice(0,7); if(m) set[m]=1 })
   if(bm[pm] && bm[pm].length>=5) set[pm]=1                    // 上一個完整月（即使無 Archive/Cycle 也顯示結算）
+  var _cm=_n.getFullYear()+'-'+String(_n.getMonth()+1).padStart(2,'0')   // 當月（進行中）
+  if(bm[_cm] && bm[_cm].length>=1) set[_cm]=1                 // V13.92 進行中的當月只要有 dailyEquity 就顯示（不必等平倉/下月）
   var months=Object.keys(set).sort(function(a,b){ return a<b?1:-1 })  // desc（最新在上）
   if(!months.length){ el.innerHTML=''; return }
   var _negProf=deriveNegativeMonthProfile(S)   // 功能2 歷史負月脈絡（完整月）
