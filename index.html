@@ -330,11 +330,11 @@ const PORTFOLIO_STATE = {
   accounts: {
     ft: {
       name: '第一證券',
-      nav: 80646.54,
-      buyingPower: 30363.54,
-      cash: 80646,
-      dayChange: 270.65,
-      lastUpdated: '2026-10-06 收盤',
+      nav: 80518.51,
+      buyingPower: 30164.52,
+      cash: 80518,
+      dayChange: -129.52,
+      lastUpdated: '2026-10-07 收盤',
       positions: [
         { tk:'QQQ LEAPS',    sh:'685C 2028/12·×1 買@179.50',        pr:'150.00', ch:'-14.00', chp:'(-8.54%)', pos:true,  col:'#1565C0', ic:'Q', status:'ok',   exp:'2028-12-19', spark:[159.75,167.30,170.74,161.50,154.00,154.00,164.00,164.00,150.00] },
         { tk:'QQQ C4 ✅',     sh:'709P/630P · 07/17獲利承接轉PMCC',    pr:'+228',   ch:'已實現', chp:'(30%)',    pos:true,  col:'#1B5E20', ic:'Q', status:'closed', exp:'2026-07-17', spark:[8.0,9.0,10.0,11.0,11.0,9.30,4.65,2.46,5.33] },
@@ -351,11 +351,11 @@ const PORTFOLIO_STATE = {
     },
     sc: {
       name: '嘉信理財',
-      nav: 190449.60,
-      buyingPower: 74249.30,
-      cash: 98274.60,
-      dayChange: 1775.00,
-      lastUpdated: '2026-10-06 收盤',
+      nav: 189593.11,
+      buyingPower: 76611.31,
+      cash: 100636.61,
+      dayChange: -856.49,
+      lastUpdated: '2026-10-07 收盤',
       positions: [
         { tk:'SPY LEAPS',    sh:'730C 2028/12·×6',                  pr:'131.00', ch:'+0.56',  chp:'(+0.43%)',  pos:true,  col:'#1565C0', ic:'S', status:'ok',     exp:'2028-12-19', spark:[139.15,139.61,137.52,132.42,131.14,135.00,134.30,130.44,131.00] },
         { tk:'SPY PMCC',     sh:'770C 08/14·×3 SELL @$4.82',        pr:'1.91',   ch:'-1.44',  chp:'(-43.0%)', pos:false, col:'#B71C1C', ic:'S', status:'ok',     exp:'2026-08-14', spark:[4.82,4.82,4.82,4.82,4.82,5.87,4.39,3.35,1.91] },
@@ -482,13 +482,13 @@ const PORTFOLIO_STATE = {
     sc: { principal: 154000, spyBase: 708.78, spyShares: 217.27 },
     ft: { principal: 70000,  qqqBase: 648.04, qqqShares: 108.02 },
     livePrice: {
-      SPY:  779.09,   // 10/06 收盤 TV
-      QQQ:  759.66,   // 10/06 收盤 截圖
-      IBIT:  48.49,   // 10/06 收盤 截圖
-      BRKB: 505.93,   // 10/06 收盤 截圖
-      MSFT: 529.30,   // 10/06 收盤 TOS
+      SPY:  777.22,   // 10/07 收盤 TV(與截圖反推一致)
+      QQQ:  757.73,   // 10/07 收盤 截圖
+      IBIT:  47.21,   // 10/07 收盤 截圖
+      BRKB: 506.25,   // 10/07 收盤 截圖
+      MSFT: 529.70,   // 10/07 收盤 TOS
       SPCX: 143.69,   // 08/31 收盤 TOS
-      updatedAt: '2026-10-06',
+      updatedAt: '2026-10-07',
       // 'manual'=手動輸入；'tos_screenshot'=截圖解析；'tradingview'=MCP同步
       source: 'tos_screenshot'
     }
@@ -664,6 +664,7 @@ const PORTFOLIO_STATE = {
     { date:'2026-10-02', sc:186134.60, ft:80363.16, ib:1000, total:267497.76 },
     { date:'2026-10-05', sc:188674.60, ft:80407.43, ib:1000, total:270082.03 },
     { date:'2026-10-06', sc:190449.60, ft:80646.54, ib:1000, total:272096.14 },
+    { date:'2026-10-07', sc:189593.11, ft:80518.51, ib:1000, total:271111.62 },
   ],
 
   // ── 資產曲線圖資料（由 _deriveCurves() 從 dailyEquity 自動生成）──
@@ -693,7 +694,7 @@ const PORTFOLIO_STATE = {
       note:'✅ 07/01 成交 @$11.00 · 原GTC@6.94取消 · 改買OCT30 695P×5 · 675P SEP@5.09賣出滾入 · 121 DTE Phase2完成' },
     { id:'GTC_698P', desc:'SPY 698P BUY BACK × 3 · 第三組黑天鵝自動平倉',
       type:'buyback', orderDate:'2026-07-08', fillDate:null, fillPrice:null,
-      limitPrice:0.20, currentMark:0.50, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:0.20, currentMark:0.475, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'第三組 SELL 698P 買回單 · Theta 歸零等待中 · GTC @0.20' },
     { id:'GTC_700P_G3', desc:'SPY 700P NOV30 BUY × 5 · 第二組保護腿 rollover / 生命週期延續',
       type:'phase2', purpose:'第二組保護腿 rollover / 生命週期延續', action:'BUY TO OPEN',
@@ -710,11 +711,11 @@ const PORTFOLIO_STATE = {
       type:'phase2', purpose:'第四組黑天鵝尾部保護（配 729P 收租腿）', action:'BUY TO OPEN',
       contract:'SPY 705P', expiration:'2027-01-15', quantity:5,
       orderDate:'2026-09-16', fillDate:null, fillPrice:null,
-      limitPrice:5.52, currentMark:5.83, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:5.52, currentMark:6.05, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'BS_0916 尾部保護腿 · BUY 705P ×5 @5.52 GTC · 歷史新低權利金掛單 · 可能很晚才成交 · 配 729P ×3 SELL 收租腿(已成交 @9.41)' },
     { id:'GTC_729P_BUYBACK', desc:'SPY 729P NOV30 BUY BACK × 3 · 收租腿自動平倉',
       type:'buyback', orderDate:'2026-09-17', fillDate:null, fillPrice:null,
-      limitPrice:0.20, currentMark:3.81, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:0.20, currentMark:4.00, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'BS_0916 收租腿 729P ×3 買回單 · GTC @0.20 · Theta 歸零等待中' },
   ],
 
@@ -1564,7 +1565,9 @@ const PORTFOLIO_STATE = {
     { id:'T_SPYPMCC_770CSEP_C', strategyId:'SPY_PMCC', strategyName:'SPY PMCC', ledgerType:'pmcc', cycleId:'SPY_PMCC_SC_770C_SEP', cycleLabel:'SPY PMCC · 770C × 3 · 09/04 · >80% 買回', account:'sc', ticker:'SPY', action:'CLOSE', tradeDate:'2026-09-01', expiry:'2026-09-04', quantity:3, legs:['BUY TO CLOSE 770C ×3 @0.96'], grossCashflow:-288, fees:null, netCashflow:-288, realizedPnl:1242, pct:81.2, status:'closed', isUnderlying:false, linkedTradeId:'T_SPYPMCC_770CSEP_O', ledgerId:'CF_M09_001', note:'770C 09/04 · 08/03開@5.10×3 (+$1,530) · 09/01買回@0.96×3 (-$288) · 實現 +$1,242 (81.2%) · 防禦力飽和 >80% 全平 roll 787C 10/09' },
     { id:'T_SPYPMCC_789C_C', strategyId:'SPY_PMCC', strategyName:'SPY PMCC', ledgerType:'pmcc', cycleId:'SPY_PMCC_SC_789C_SEP', cycleLabel:'SPY PMCC · 789C × 1 · 09/18 · >80% 買回', account:'sc', ticker:'SPY', action:'CLOSE', tradeDate:'2026-09-01', expiry:'2026-09-18', quantity:1, legs:['BUY TO CLOSE 789C ×1 @0.44'], grossCashflow:-44, fees:null, netCashflow:-44, realizedPnl:656, pct:93.7, status:'closed', isUnderlying:false, linkedTradeId:'T_SPYPMCC_789C_O', ledgerId:'CF_M09_002', note:'789C 09/18 · 08/13開@7.00×1 (+$700) · 09/01買回@0.44×1 (-$44) · 實現 +$656 (93.7%) · roll 787C 10/09' },
     { id:'T_SPYPMCC_790C_C', strategyId:'SPY_PMCC', strategyName:'SPY PMCC', ledgerType:'pmcc', cycleId:'SPY_PMCC_SC_790C_SEP', cycleLabel:'SPY PMCC · 790C × 2 · 09/18 · >80% 買回', account:'sc', ticker:'SPY', action:'CLOSE', tradeDate:'2026-09-01', expiry:'2026-09-18', quantity:2, legs:['BUY TO CLOSE 790C ×2 @0.37'], grossCashflow:-74, fees:null, netCashflow:-74, realizedPnl:1426, pct:95.1, status:'closed', isUnderlying:false, linkedTradeId:'T_SPYPMCC_790C_O', ledgerId:'CF_M09_003', note:'790C 09/18 · 08/13開@7.50×2 (+$1,500) · 09/01買回@0.37×2 (-$74) · 實現 +$1,426 (95.1%) · roll 787C 10/09' },
-    { id:'T_SPYPMCC_787C_O', strategyId:'SPY_PMCC', strategyName:'SPY PMCC', ledgerType:'pmcc', cycleId:'SPY_PMCC_SC_787C', cycleLabel:'SPY PMCC · 787C × 6 · 10/09', account:'sc', ticker:'SPY', action:'OPEN', tradeDate:'2026-09-01', expiry:'2026-10-09', quantity:6, legs:['SELL 787C ×6 @3.06'], grossCashflow:1836, fees:null, netCashflow:1836, realizedPnl:null, status:'open', isUnderlying:false, linkedTradeId:null, trigger:'防禦力飽和 · 舊 short call >80% 全平 · roll up/out', reason:'SPY PMCC 整組 roll：770C 09/04 + 789C/790C 09/18 全平 → 787C 10/09 ×6 統一新層 · 履約價升、天期延、單一到期', note:'SPY PMCC 加開 787C 10/09 ×6 @3.06 (+$1,836) · 38 DTE · LEAPS 730C×6 · 三舊層平倉合計實現 +$3,324' },
+    { id:'T_SPYPMCC_787C_O', strategyId:'SPY_PMCC', strategyName:'SPY PMCC', ledgerType:'pmcc', cycleId:'SPY_PMCC_SC_787C', cycleLabel:'SPY PMCC · 787C × 6 · 10/09', account:'sc', ticker:'SPY', action:'OPEN', tradeDate:'2026-09-01', expiry:'2026-10-09', quantity:6, legs:['SELL 787C ×6 @3.06'], grossCashflow:1836, fees:null, netCashflow:1836, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_SPYPMCC_787C_C', trigger:'防禦力飽和 · 舊 short call >80% 全平 · roll up/out', reason:'SPY PMCC 整組 roll：770C 09/04 + 789C/790C 09/18 全平 → 787C 10/09 ×6 統一新層 · 履約價升、天期延、單一到期', note:'SPY PMCC 加開 787C 10/09 ×6 @3.06 (+$1,836) · 38 DTE · LEAPS 730C×6 · 三舊層平倉合計實現 +$3,324' },
+    { id:'T_SPYPMCC_787C_C', strategyId:'SPY_PMCC', strategyName:'SPY PMCC', ledgerType:'pmcc', cycleId:'SPY_PMCC_SC_787C', cycleLabel:'SPY PMCC · 787C × 6 · 10/09 · 買回鎖利', account:'sc', ticker:'SPY', action:'CLOSE', tradeDate:'2026-10-07', expiry:'2026-10-09', quantity:6, legs:['BUY TO CLOSE 787C ×6 @0.18'], grossCashflow:-108, fees:null, netCashflow:-108, realizedPnl:1728, pct:94.1, status:'closed', isUnderlying:false, linkedTradeId:'T_SPYPMCC_787C_O', ledgerId:'CF_M10_001', note:'787C ×6 買回 @0.18 · 實現 +$1,728 (94.1%) · roll up/out → 800C 11/13 · 近到期鎖利' },
+    { id:'T_SPYPMCC_800C_O', strategyId:'SPY_PMCC', strategyName:'SPY PMCC', ledgerType:'pmcc', cycleId:'SPY_PMCC_SC_800C', cycleLabel:'SPY PMCC · 800C × 6 · 11/13', account:'sc', ticker:'SPY', action:'OPEN', tradeDate:'2026-10-07', expiry:'2026-11-13', quantity:6, legs:['SELL 800C ×6 @4.13'], grossCashflow:2478, fees:null, netCashflow:2478, realizedPnl:null, status:'open', isUnderlying:false, linkedTradeId:null, strike:800, optType:'C', underlyingPriceAtEntry:775, entryPremiumPerShare:4.13, entryPriceSource:'手動·下單當下約略值', entryNote:'10/07 roll up/out · 787C 買回後新開 · 實際成交 @4.13 ×6', trigger:'舊 787C >94% 鎖利 · 連日創高後 roll up 收租', reason:'SPY PMCC 短腿 roll：787C→800C 履約升、天期延(11/13) · 遠OTM 收租', note:'SPY PMCC 短腿 · 800C 11/13 ×6 @4.13 (+$2,478) · 37 DTE · 履約800 遠OTM(SPY 775) · 底層 LEAPS 730C×6' },
     // ── MSFT PMCC (嘉信) ────────────────────────────────────────
     { id:'T_MSFTPMCC_LEAPS_O', strategyId:'MSFT_PMCC', strategyName:'MSFT PMCC', ledgerType:'pmcc', cycleId:'MSFT_PMCC_SC_LEAPS', cycleLabel:'MSFT LEAPS 375C × 1 · 2028/12', account:'sc', ticker:'MSFT', action:'OPEN', tradeDate:'2026-06-12', expiry:'2028-12-15', quantity:1, legs:['BUY 375C ×1 @105.60'], grossCashflow:-10560, fees:null, netCashflow:-10560, realizedPnl:null, status:'closed', isUnderlying:true, linkedTradeId:'T_MSFTPMCC_LEAPS_C', note:'底層 LEAPS · 原始成本 $10,560 不得重設 · 2026-09-03 獲利了結平倉' },
     { id:'T_MSFTPMCC_430CJUL_O', strategyId:'MSFT_PMCC', strategyName:'MSFT PMCC', ledgerType:'pmcc', cycleId:'MSFT_PMCC_SC_430C_JUL', cycleLabel:'MSFT PMCC · 430C × 1 · 07/17', account:'sc', ticker:'MSFT', action:'OPEN', tradeDate:'2026-06-12', expiry:'2026-07-17', quantity:1, legs:['SELL 430C ×1 @3.90'], grossCashflow:390, fees:0.67, netCashflow:389.33, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_MSFTPMCC_430CJUL_C', note:'舊短Call · 06/12 開倉 @$3.90 · 券商淨收 $389.33' },
@@ -2070,7 +2073,7 @@ var _TV_SPY_BARS = [
   {"date":"2026-08-06","close":768.56},{"date":"2026-08-07","close":773.26},
   {"date":"2026-08-10","close":773.03},{"date":"2026-08-11","close":770.56},
   {"date":"2026-08-12","close":772.49},{"date":"2026-08-13","close":777.88},
-  {"date":"2026-08-14","close":776.34},{"date":"2026-08-17","close":772.67},{"date":"2026-08-18","close":767.45},{"date":"2026-08-19","close":769.06},{"date":"2026-08-20","close":762.60},{"date":"2026-08-21","close":765.72},{"date":"2026-08-24","close":763.47},{"date":"2026-08-25","close":765.91},{"date":"2026-08-26","close":766.08},{"date":"2026-08-27","close":771.10},{"date":"2026-08-28","close":769.35},{"date":"2026-08-31","close":767.05},{"date":"2026-09-01","close":761.78},{"date":"2026-09-02","close":765.16},{"date":"2026-09-03","close":773.17},{"date":"2026-09-04","close":770.19},{"date":"2026-09-08","close":765.96},{"date":"2026-09-09","close":762.40},{"date":"2026-09-10","close":757.83},{"date":"2026-09-11","close":764.29},{"date":"2026-09-12","close":760.88},{"date":"2026-09-15","close":757.39},{"date":"2026-09-16","close":754.05},{"date":"2026-09-17","close":762.60},{"date":"2026-09-18","close":761.69},{"date":"2026-09-19","close":773.50},{"date":"2026-09-22","close":773.38},{"date":"2026-09-23","close":767.81},{"date":"2026-09-24","close":767.18},{"date":"2026-09-25","close":771.35},{"date":"2026-09-28","close":765.61},{"date":"2026-09-29","close":764.20},{"date":"2026-09-30","close":762.63},{"date":"2026-10-01","close":763.99},{"date":"2026-10-02","close":769.64},{"date":"2026-10-05","close":774.83},{"date":"2026-10-06","close":779.09}
+  {"date":"2026-08-14","close":776.34},{"date":"2026-08-17","close":772.67},{"date":"2026-08-18","close":767.45},{"date":"2026-08-19","close":769.06},{"date":"2026-08-20","close":762.60},{"date":"2026-08-21","close":765.72},{"date":"2026-08-24","close":763.47},{"date":"2026-08-25","close":765.91},{"date":"2026-08-26","close":766.08},{"date":"2026-08-27","close":771.10},{"date":"2026-08-28","close":769.35},{"date":"2026-08-31","close":767.05},{"date":"2026-09-01","close":761.78},{"date":"2026-09-02","close":765.16},{"date":"2026-09-03","close":773.17},{"date":"2026-09-04","close":770.19},{"date":"2026-09-08","close":765.96},{"date":"2026-09-09","close":762.40},{"date":"2026-09-10","close":757.83},{"date":"2026-09-11","close":764.29},{"date":"2026-09-12","close":760.88},{"date":"2026-09-15","close":757.39},{"date":"2026-09-16","close":754.05},{"date":"2026-09-17","close":762.60},{"date":"2026-09-18","close":761.69},{"date":"2026-09-19","close":773.50},{"date":"2026-09-22","close":773.38},{"date":"2026-09-23","close":767.81},{"date":"2026-09-24","close":767.18},{"date":"2026-09-25","close":771.35},{"date":"2026-09-28","close":765.61},{"date":"2026-09-29","close":764.20},{"date":"2026-09-30","close":762.63},{"date":"2026-10-01","close":763.99},{"date":"2026-10-02","close":769.64},{"date":"2026-10-05","close":774.83},{"date":"2026-10-06","close":779.09},{"date":"2026-10-07","close":777.22}
 ]
 
 function fetchSPYHistory() {
