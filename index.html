@@ -330,11 +330,11 @@ const PORTFOLIO_STATE = {
   accounts: {
     ft: {
       name: '第一證券',
-      nav: 80783.25,
-      buyingPower: 30703.24,
-      cash: 80783,
-      dayChange: 450.25,
-      lastUpdated: '2026-10-12 收盤',
+      nav: 80367.86,
+      buyingPower: 31296.95,
+      cash: 80367,
+      dayChange: -415.39,
+      lastUpdated: '2026-10-13 收盤',
       positions: [
         { tk:'QQQ LEAPS',    sh:'685C 2028/12·×1 買@179.50',        pr:'150.00', ch:'-14.00', chp:'(-8.54%)', pos:true,  col:'#1565C0', ic:'Q', status:'ok',   exp:'2028-12-19', spark:[159.75,167.30,170.74,161.50,154.00,154.00,164.00,164.00,150.00] },
         { tk:'QQQ C4 ✅',     sh:'709P/630P · 07/17獲利承接轉PMCC',    pr:'+228',   ch:'已實現', chp:'(30%)',    pos:true,  col:'#1B5E20', ic:'Q', status:'closed', exp:'2026-07-17', spark:[8.0,9.0,10.0,11.0,11.0,9.30,4.65,2.46,5.33] },
@@ -351,11 +351,11 @@ const PORTFOLIO_STATE = {
     },
     sc: {
       name: '嘉信理財',
-      nav: 190574.78,
+      nav: 190452.78,
       buyingPower: 73131.98,
       cash: 101157.28,
-      dayChange: 182.00,
-      lastUpdated: '2026-10-12 收盤',
+      dayChange: -122.00,
+      lastUpdated: '2026-10-13 收盤',
       positions: [
         { tk:'SPY LEAPS',    sh:'730C 2028/12·×6',                  pr:'131.00', ch:'+0.56',  chp:'(+0.43%)',  pos:true,  col:'#1565C0', ic:'S', status:'ok',     exp:'2028-12-19', spark:[139.15,139.61,137.52,132.42,131.14,135.00,134.30,130.44,131.00] },
         { tk:'SPY PMCC',     sh:'770C 08/14·×3 SELL @$4.82',        pr:'1.91',   ch:'-1.44',  chp:'(-43.0%)', pos:false, col:'#B71C1C', ic:'S', status:'ok',     exp:'2026-08-14', spark:[4.82,4.82,4.82,4.82,4.82,5.87,4.39,3.35,1.91] },
@@ -484,13 +484,13 @@ const PORTFOLIO_STATE = {
     sc: { principal: 154000, spyBase: 708.78, spyShares: 217.27 },
     ft: { principal: 70000,  qqqBase: 648.04, qqqShares: 108.02 },
     livePrice: {
-      SPY:  778.10,   // 10/12 收盤 TV
-      QQQ:  746.04,   // 10/12 收盤 截圖
-      IBIT:  46.70,   // 10/12 收盤 截圖
-      BRKB: 517.60,   // 10/12 收盤 截圖
-      MSFT: 541.15,   // 10/12 收盤 TOS
+      SPY:  778.01,   // 10/13 收盤 TV
+      QQQ:  743.57,   // 10/13 收盤 截圖
+      IBIT:  47.25,   // 10/13 收盤 截圖
+      BRKB: 520.59,   // 10/13 收盤 截圖
+      MSFT: 543.45,   // 10/13 收盤 TOS
       SPCX: 143.69,   // 08/31 收盤 TOS
-      updatedAt: '2026-10-12',
+      updatedAt: '2026-10-13',
       // 'manual'=手動輸入；'tos_screenshot'=截圖解析；'tradingview'=MCP同步
       source: 'tos_screenshot'
     }
@@ -670,6 +670,7 @@ const PORTFOLIO_STATE = {
     { date:'2026-10-08', sc:188472.78, ft:79515.28, ib:1000, total:268988.06 },
     { date:'2026-10-09', sc:190392.78, ft:80333.00, ib:1000, total:271725.78 },
     { date:'2026-10-12', sc:190574.78, ft:80783.25, ib:1000, total:272358.03 },
+    { date:'2026-10-13', sc:190452.78, ft:80367.86, ib:1000, total:271820.64 },
   ],
 
   // ── 資產曲線圖資料（由 _deriveCurves() 從 dailyEquity 自動生成）──
@@ -699,7 +700,7 @@ const PORTFOLIO_STATE = {
       note:'✅ 07/01 成交 @$11.00 · 原GTC@6.94取消 · 改買OCT30 695P×5 · 675P SEP@5.09賣出滾入 · 121 DTE Phase2完成' },
     { id:'GTC_698P', desc:'SPY 698P BUY BACK × 3 · 第三組黑天鵝自動平倉',
       type:'buyback', orderDate:'2026-07-08', fillDate:null, fillPrice:null,
-      limitPrice:0.20, currentMark:0.315, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:0.20, currentMark:0.295, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'第三組 SELL 698P 買回單 · Theta 歸零等待中 · GTC @0.20' },
     { id:'GTC_700P_G3', desc:'SPY 700P NOV30 BUY × 5 · 第二組保護腿 rollover / 生命週期延續',
       type:'phase2', purpose:'第二組保護腿 rollover / 生命週期延續', action:'BUY TO OPEN',
@@ -716,11 +717,11 @@ const PORTFOLIO_STATE = {
       type:'phase2', purpose:'第四組黑天鵝尾部保護（配 729P 收租腿）', action:'BUY TO OPEN',
       contract:'SPY 705P', expiration:'2027-01-15', quantity:5,
       orderDate:'2026-09-16', fillDate:null, fillPrice:null,
-      limitPrice:5.52, currentMark:5.79, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:5.52, currentMark:5.715, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'BS_0916 尾部保護腿 · BUY 705P ×5 @5.52 GTC · 歷史新低權利金掛單 · 可能很晚才成交 · 配 729P ×3 SELL 收租腿(已成交 @9.41)' },
     { id:'GTC_729P_BUYBACK', desc:'SPY 729P NOV30 BUY BACK × 3 · 收租腿自動平倉',
       type:'buyback', orderDate:'2026-09-17', fillDate:null, fillPrice:null,
-      limitPrice:0.20, currentMark:3.545, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:0.20, currentMark:3.455, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'BS_0916 收租腿 729P ×3 買回單 · GTC @0.20 · Theta 歸零等待中' },
   ],
 
@@ -1621,7 +1622,9 @@ const PORTFOLIO_STATE = {
     { id:'T_QQQW_770C_O', originStrategy:'QQQ_豪華摩天輪', currentStrategy:'QQQ_PMCC', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', structureType:'PMCC_AFTER_ASSIGNMENT', cycleId:'QQQ_WHEEL_FT_C4CONV_770C', cycleLabel:'QQQ 摩天輪轉換 · SELL 770C · 09/04', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-08-06', expiry:'2026-09-04', quantity:1, legs:['SELL 770C ×1 @5.00 限價'], grossCashflow:500, fees:null, netCashflow:500, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_770C_C', lifecycleStage:'Wheel承接轉PMCC', trigger:'QQQ 爬升 · 履約價770 高於前次750', reason:'給 650C LEAPS 加第二層 short call：750C 08/21+770C 09/04 並行收租 · 與 SPY PMCC 雙層同理', note:'QQQ 承接結構加開 770C 09/04 ×1 @5.00 (+$500) · 08/25 買回@0.02 平倉' },
     { id:'T_QQQW_770C_C', originStrategy:'QQQ_豪華摩天輪', currentStrategy:'QQQ_PMCC', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', structureType:'PMCC_AFTER_ASSIGNMENT', cycleId:'QQQ_WHEEL_FT_C4CONV_770C', cycleLabel:'QQQ 承接後PMCC · 770C 09/04 · 買回平倉', account:'ft', ticker:'QQQ', action:'CLOSE', tradeDate:'2026-08-25', expiry:'2026-09-04', quantity:1, legs:['BUY TO CLOSE 770C ×1 @0.02'], grossCashflow:-2, fees:null, netCashflow:-2, realizedPnl:498, pct:99.6, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_770C_O', ledgerId:'CF_M08_007', note:'770C 09/04 · 08/06開@5.00 (+$500) · 08/25買回@0.02 (-$2) · 實現 +$498 (99.6%) · QQQ 711<<770 近乎歸零 · 提前落袋釋放 · 650C LEAPS 續留' },
     { id:'T_QQQW_755C_C', originStrategy:'QQQ_豪華摩天輪', currentStrategy:'QQQ_PMCC', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', structureType:'PMCC_AFTER_ASSIGNMENT', cycleId:'QQQ_WHEEL_FT_C4CONV_755C', cycleLabel:'QQQ 承接後PMCC · 755C 09/11 · 買回平倉', account:'ft', ticker:'QQQ', action:'CLOSE', tradeDate:'2026-09-01', expiry:'2026-09-11', quantity:1, legs:['BUY TO CLOSE 755C ×1 @0.04'], grossCashflow:-4, fees:null, netCashflow:-4, realizedPnl:482, pct:99.2, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_755C_O', ledgerId:'CF_M09_004', note:'755C 09/11 · 08/12開@4.86×1 (+$486) · 09/01買回@0.04×1 (-$4) · 實現 +$482 (99.2%) · QQQ short call 買回不再開新 · 650C/685C LEAPS 續留(裸長)' },
-    { id:'T_QQQPMCC_775COCT_O', strategyId:'QQQ_PMCC', strategyName:'QQQ PMCC', ledgerType:'pmcc', cycleId:'QQQ_PMCC_FT_775C_OCT', cycleLabel:'QQQ PMCC · 775C × 2 · 10/30', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-09-23', expiry:'2026-10-30', quantity:2, legs:['SELL 775C ×2 @6.30'], grossCashflow:1260, fees:null, netCashflow:1260, realizedPnl:null, status:'open', isUnderlying:false, linkedTradeId:null, trigger:'QQQ 反彈至高檔 · 重掛短Call收租', reason:'QQQ 650C/685C 雙 LEAPS 完整吃到上行後，於高檔重建 PMCC 短腿 ×2 收租 · 履約價 775 遠OTM(QQQ 745)', strike:775, optType:'C', underlyingPriceAtEntry:745, underlyingPrevClose:748, underlyingPremarket:746, entryPremiumPerShare:6.00, entryPriceSource:'手動·觀察20-30分後約略值', entryNote:'9/22 觀察後下單 · 實際成交 @6.30 ×2 (09/23) · 成交時間與 DTE 尚需在交易紀錄中確認', note:'QQQ PMCC 短腿 · 775C 10/30 ×2 @6.30 (+$1,260) · 37 DTE · 底層 650C(09/17/27)+685C(12/15/28)' },
+    { id:'T_QQQPMCC_775COCT_O', strategyId:'QQQ_PMCC', strategyName:'QQQ PMCC', ledgerType:'pmcc', cycleId:'QQQ_PMCC_FT_775C_OCT', cycleLabel:'QQQ PMCC · 775C × 2 · 10/30', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-09-23', expiry:'2026-10-30', quantity:2, legs:['SELL 775C ×2 @6.30'], grossCashflow:1260, fees:null, netCashflow:1260, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQPMCC_775COCT_C', trigger:'QQQ 反彈至高檔 · 重掛短Call收租', reason:'QQQ 650C/685C 雙 LEAPS 完整吃到上行後，於高檔重建 PMCC 短腿 ×2 收租 · 履約價 775 遠OTM(QQQ 745)', strike:775, optType:'C', underlyingPriceAtEntry:745, underlyingPrevClose:748, underlyingPremarket:746, entryPremiumPerShare:6.00, entryPriceSource:'手動·觀察20-30分後約略值', entryNote:'9/22 觀察後下單 · 實際成交 @6.30 ×2 (09/23) · 成交時間與 DTE 尚需在交易紀錄中確認', note:'QQQ PMCC 短腿 · 775C 10/30 ×2 @6.30 (+$1,260) · 37 DTE · 底層 650C(09/17/27)+685C(12/15/28)' },
+    { id:'T_QQQPMCC_775COCT_C', strategyId:'QQQ_PMCC', strategyName:'QQQ PMCC', ledgerType:'pmcc', cycleId:'QQQ_PMCC_FT_775C_OCT', cycleLabel:'QQQ PMCC · 775C × 2 · 10/30 · roll 買回', account:'ft', ticker:'QQQ', action:'CLOSE', tradeDate:'2026-10-13', expiry:'2026-10-30', quantity:2, legs:['BUY TO CLOSE 775C ×2 @1.49'], grossCashflow:-298, fees:null, netCashflow:-298, realizedPnl:962, pct:76.3, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQPMCC_775COCT_O', ledgerId:'CF_M10_002', note:'775C 10/30 ×2 買回 @1.49 · 實現 +$962 (76.3%) · roll out → 775C 11/13 同履約價 · 剩餘<30%+2週TV,收割再部署' },
+    { id:'T_QQQPMCC_775NOV_O', strategyId:'QQQ_PMCC', strategyName:'QQQ PMCC', ledgerType:'pmcc', cycleId:'QQQ_PMCC_FT_775C_NOV', cycleLabel:'QQQ PMCC · 775C × 2 · 11/13', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-10-13', expiry:'2026-11-13', quantity:2, legs:['SELL 775C ×2 @4.13'], grossCashflow:826, fees:null, netCashflow:826, realizedPnl:null, status:'open', isUnderlying:false, linkedTradeId:null, strike:775, optType:'C', underlyingPriceAtEntry:742.85, entryPremiumPerShare:4.13, entryPriceSource:'手動·下單當下報價', entryNote:'10/13 roll out 同履約價 775 · 買回 10/30 @1.49 + 新開 11/13 @4.13 · roll 淨 credit +$528', ivPercentile:17, impliedVol:20.86, iv52wHigh:33.9, iv52wLow:18.2, ivSource:'TOS Today\'s Options Statistics', underlyingDayHigh:744.20, underlyingDayLow:738.83, trigger:'舊 775C 10/30 獲利>76%(剩<30%+2週TV) · 同履約價 roll out 延續收租', reason:'PMCC 短腿 roll out：履約價不變(上行捕獲一致)、天期延至 11/13、收新權利金墊下行 · roll 淨 credit +$528', note:'QQQ PMCC 短腿 · 775C 11/13 ×2 @4.13 (+$826) · 31 DTE · 履約775 價外(QQQ 742.85) · 底層 650C(09/17/27)+685C(12/15/28) · 由 10/30 roll 而來' },
     { id:'T_QQQW_C5_O', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', cycleId:'QQQ_WHEEL_FT_C5', cycleLabel:'QQQ 豪華摩天輪 · C5 · 680P/590P × 1 · 08/07', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-07-03', expiry:'2026-08-07', quantity:1, legs:['SELL 680P','BUY 590P @9.53淨'], grossCashflow:953, fees:null, netCashflow:953, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_C5_C', note:'C3 平倉同日換開 · 2UP · 08/07 到期歸零' },
     { id:'T_QQQW_C5_C', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', cycleId:'QQQ_WHEEL_FT_C5', cycleLabel:'QQQ 豪華摩天輪 · C5 · 680P/590P · 08/07 到期歸零', account:'ft', ticker:'QQQ', action:'CLOSE', tradeDate:'2026-08-07', expiry:'2026-08-07', quantity:1, legs:['680P/590P 08/07 到期 · QQQ 723 遠高於 680P · 雙腿歸零'], grossCashflow:0, fees:null, netCashflow:0, realizedPnl:953, pct:100, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_C5_O', ledgerId:'CF_M08_001', note:'C5 680P/590P 08/07 到期 · QQQ 723 >> 680P 全OTM · 自動歸零收割 · Theta 完整落袋 +$953 (100%)' },
     { id:'T_QQQW_C7_O', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', cycleId:'QQQ_WHEEL_SC_C7', cycleLabel:'QQQ 豪華摩天輪 · C7 · 650P/565P × 1 · 08/21 · 嘉信', account:'sc', ticker:'QQQ', action:'OPEN', tradeDate:'2026-07-18', expiry:'2026-08-21', quantity:1, legs:['SELL 650P ×1 @10.32 (+$1,032)','BUY 565P ×1 @1.90 (-$190)'], grossCashflow:842, fees:null, netCashflow:842, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_C7_C', trigger:'QQQ 單日下跌 -2% · IV > 70', reason:'2.0 條件驅動加碼：下跌+IV高+履約價更低（650 vs C6 687）+BP允許', note:'嘉信第二組 QQQ 輪 · Δ約0.22 · +$842 未扣費 · 08/21 到期歸零' },
@@ -2080,7 +2083,7 @@ var _TV_SPY_BARS = [
   {"date":"2026-08-06","close":768.56},{"date":"2026-08-07","close":773.26},
   {"date":"2026-08-10","close":773.03},{"date":"2026-08-11","close":770.56},
   {"date":"2026-08-12","close":772.49},{"date":"2026-08-13","close":777.88},
-  {"date":"2026-08-14","close":776.34},{"date":"2026-08-17","close":772.67},{"date":"2026-08-18","close":767.45},{"date":"2026-08-19","close":769.06},{"date":"2026-08-20","close":762.60},{"date":"2026-08-21","close":765.72},{"date":"2026-08-24","close":763.47},{"date":"2026-08-25","close":765.91},{"date":"2026-08-26","close":766.08},{"date":"2026-08-27","close":771.10},{"date":"2026-08-28","close":769.35},{"date":"2026-08-31","close":767.05},{"date":"2026-09-01","close":761.78},{"date":"2026-09-02","close":765.16},{"date":"2026-09-03","close":773.17},{"date":"2026-09-04","close":770.19},{"date":"2026-09-08","close":765.96},{"date":"2026-09-09","close":762.40},{"date":"2026-09-10","close":757.83},{"date":"2026-09-11","close":764.29},{"date":"2026-09-12","close":760.88},{"date":"2026-09-15","close":757.39},{"date":"2026-09-16","close":754.05},{"date":"2026-09-17","close":762.60},{"date":"2026-09-18","close":761.69},{"date":"2026-09-19","close":773.50},{"date":"2026-09-22","close":773.38},{"date":"2026-09-23","close":767.81},{"date":"2026-09-24","close":767.18},{"date":"2026-09-25","close":771.35},{"date":"2026-09-28","close":765.61},{"date":"2026-09-29","close":764.20},{"date":"2026-09-30","close":762.63},{"date":"2026-10-01","close":763.99},{"date":"2026-10-02","close":769.64},{"date":"2026-10-05","close":774.83},{"date":"2026-10-06","close":779.09},{"date":"2026-10-07","close":777.22},{"date":"2026-10-08","close":773.93},{"date":"2026-10-09","close":778.57},{"date":"2026-10-12","close":778.10}
+  {"date":"2026-08-14","close":776.34},{"date":"2026-08-17","close":772.67},{"date":"2026-08-18","close":767.45},{"date":"2026-08-19","close":769.06},{"date":"2026-08-20","close":762.60},{"date":"2026-08-21","close":765.72},{"date":"2026-08-24","close":763.47},{"date":"2026-08-25","close":765.91},{"date":"2026-08-26","close":766.08},{"date":"2026-08-27","close":771.10},{"date":"2026-08-28","close":769.35},{"date":"2026-08-31","close":767.05},{"date":"2026-09-01","close":761.78},{"date":"2026-09-02","close":765.16},{"date":"2026-09-03","close":773.17},{"date":"2026-09-04","close":770.19},{"date":"2026-09-08","close":765.96},{"date":"2026-09-09","close":762.40},{"date":"2026-09-10","close":757.83},{"date":"2026-09-11","close":764.29},{"date":"2026-09-12","close":760.88},{"date":"2026-09-15","close":757.39},{"date":"2026-09-16","close":754.05},{"date":"2026-09-17","close":762.60},{"date":"2026-09-18","close":761.69},{"date":"2026-09-19","close":773.50},{"date":"2026-09-22","close":773.38},{"date":"2026-09-23","close":767.81},{"date":"2026-09-24","close":767.18},{"date":"2026-09-25","close":771.35},{"date":"2026-09-28","close":765.61},{"date":"2026-09-29","close":764.20},{"date":"2026-09-30","close":762.63},{"date":"2026-10-01","close":763.99},{"date":"2026-10-02","close":769.64},{"date":"2026-10-05","close":774.83},{"date":"2026-10-06","close":779.09},{"date":"2026-10-07","close":777.22},{"date":"2026-10-08","close":773.93},{"date":"2026-10-09","close":778.57},{"date":"2026-10-12","close":778.10},{"date":"2026-10-13","close":778.01}
 ]
 
 function fetchSPYHistory() {
@@ -6245,6 +6248,17 @@ function deriveEntrySnapshot(t){
     premium:(typeof t.entryPremiumPerShare==='number')?t.entryPremiumPerShare:null,
     source:t.entryPriceSource||null, note:t.entryNote||null,
     dte:(t.tradeDate&&t.expiry)?_daysBetween(t.tradeDate,t.expiry):null,
+    ivPct:(typeof t.ivPercentile==='number')?t.ivPercentile:null,
+    iv:(typeof t.impliedVol==='number')?t.impliedVol:null,
+    ivHi:(typeof t.iv52wHigh==='number')?t.iv52wHigh:null,
+    ivLo:(typeof t.iv52wLow==='number')?t.iv52wLow:null,
+    dayHigh:(typeof t.underlyingDayHigh==='number')?t.underlyingDayHigh:null,
+    dayLow:(typeof t.underlyingDayLow==='number')?t.underlyingDayLow:null,
+    tradeDate:t.tradeDate||null,
+    delta:(typeof t.entryDelta==='number')?t.entryDelta:null,
+    action:t.action||null, expiry:t.expiry||null,
+    trigger:t.trigger||null, reason:t.reason||null,
+    linkedTradeId:t.linkedTradeId||null, cat:_snapCat(t),
     dist:null, distPct:null, moneyness:null, premYield:null }
   if(u!=null && strike!=null && (opt==='C'||opt==='P')){
     var d=(opt==='C')?(strike-u):(u-strike)     // >0 價外 OTM · <0 價內 ITM
@@ -6277,6 +6291,25 @@ function _entrySnapshotCard(t){
     out+='<div style="display:flex;justify-content:space-between;font-size:11px;padding:5px 0;border-top:.5px solid #16233A"><span style="color:#9BA3B8">履約價距離當下股價</span><span style="color:'+distCol+';font-weight:700">'+sign+'$'+Math.abs(s.dist).toFixed(2)+'（'+distLbl+' 約 '+Math.abs(s.distPct).toFixed(2)+'%）</span></div>'
   if(s.premYield!=null)
     out+='<div style="display:flex;justify-content:space-between;font-size:11px;padding:3px 0"><span style="color:#9BA3B8">權利金 / 標的股價</span><span style="color:#C0CDE0;font-weight:600">約 '+s.premYield.toFixed(2)+'%</span></div>'
+  if(s.dayHigh!=null||s.dayLow!=null){
+    var hiTxt=s.dayHigh!=null?'$'+s.dayHigh.toFixed(2):'—', loTxt=s.dayLow!=null?'$'+s.dayLow.toFixed(2):'—'
+    out+='<div style="display:flex;justify-content:space-between;font-size:11px;padding:5px 0;border-top:.5px solid #16233A"><span style="color:#9BA3B8">下單當日 最高 / 最低</span><span style="color:#C0CDE0;font-weight:600"><span style="color:#00C896">▲'+hiTxt+'</span> <span style="color:#5A6278">/</span> <span style="color:#F0A500">▼'+loTxt+'</span></span></div>'
+  }
+  if(s.ivPct!=null){
+    var ivTier=s.ivPct<25?'低檔':(s.ivPct<50?'偏低':(s.ivPct<75?'偏高':'高檔'))
+    var ivCol=s.ivPct<25?'#F0A500':(s.ivPct<50?'#C9A227':(s.ivPct<75?'#7EE787':'#00C896'))
+    var ivExtra=(s.iv!=null?'IV '+s.iv.toFixed(2)+'%':'')
+    if(s.ivHi!=null&&s.ivLo!=null) ivExtra+=(ivExtra?' · ':'')+'52週 '+s.ivLo.toFixed(1)+'–'+s.ivHi.toFixed(1)+'%'
+    out+='<div style="display:flex;justify-content:space-between;font-size:11px;padding:5px 0;border-top:.5px solid #16233A"><span style="color:#9BA3B8">當天相對 IV · IV Percentile</span><span style="color:'+ivCol+';font-weight:700">'+s.ivPct+'%（'+ivTier+'）</span></div>'
+    if(ivExtra) out+='<div style="display:flex;justify-content:flex-end;font-size:9px;color:#5A6278;padding:0 0 3px">'+ivExtra+'</div>'
+  }
+  if(s.delta!=null)
+    out+='<div style="display:flex;justify-content:space-between;font-size:11px;padding:5px 0;border-top:.5px solid #16233A"><span style="color:#9BA3B8">Delta（下單時）</span><span style="color:#C0CDE0;font-weight:700">'+(s.delta>0?'+':'')+s.delta.toFixed(2)+'</span></div>'
+  var rez=s.trigger||s.reason
+  if(rez)
+    out+='<div style="font-size:10px;color:#9BA3B8;margin-top:5px;padding:6px 8px;background:#0E141C;border-left:2px solid #C9A227;border-radius:3px;line-height:1.5">📝 '+rez+'</div>'
+  if(s.action==='ROLL'||s.linkedTradeId)
+    out+='<div style="font-size:9px;color:#7EA6E0;margin-top:4px">🔗 Roll 關聯：'+(s.linkedTradeId||'—')+'</div>'
   var foot=[]
   if(s.dte!=null) foot.push('DTE '+s.dte)
   if(s.source) foot.push('來源:'+s.source)
@@ -6284,16 +6317,185 @@ function _entrySnapshotCard(t){
   out+='<div style="font-size:9px;color:#5A6278;margin-top:3px;line-height:1.5">假設權利金為每股報價，標準合約一張收取 權利金×100，未扣除費用。'+(s.note?s.note:'')+'</div>'
   return out+'</div>'
 }
+function _snapCat(t){                               // 分類：BCS 先判（其 ledgerType 也是 wheel）
+  var tag=((t.cycleLabel||'')+' '+(t.strategyName||''))
+  if(/BCS|bear\s*call/i.test(tag)) return 'bcs'
+  if(/_PMCC|PMCC/i.test(tag)||t.ledgerType==='pmcc') return 'pmcc'
+  if(/摩天輪|Wheel/i.test(tag)||t.ledgerType==='wheel') return 'wheel'
+  return 'other'
+}
+function _toggleSnapGrp(k){ _bsFlip('snap-'+k+'-list','snap-'+k+'-arrow') }
+function _toggleSnapHist(){ _bsFlip('snap-hist-list','snap-hist-arrow') }
+var _SNAP_META={ wheel:{icon:'🎡',name:'豪華摩天輪',col:'#00C896'}, pmcc:{icon:'🪜',name:'PMCC',col:'#58A6FF'}, bcs:{icon:'🐻',name:'BCS 賣權價差',col:'#F0A500'}, other:{icon:'📦',name:'其他',col:'#9BA3B8'} }
+var _SNAP_ACT={ OPEN:'開倉', CLOSE:'平倉', ROLL:'Roll' }
+// 收合時的核心摘要列：日期·標的·策略·動作·方向·履約·股價·價外距離
+function _snapCoreLine(s){
+  var m=_SNAP_META[s.cat]||_SNAP_META.other
+  var sideTxt=(s.side||'')+' '+(s.optType==='C'?'CALL':s.optType==='P'?'PUT':'')
+  var actTxt=_SNAP_ACT[s.action]||s.action||''
+  var dt=(s.tradeDate||'—')
+  var distTxt=''
+  if(s.distPct!=null){
+    var lbl=s.moneyness==='ATM'?'價平':(s.moneyness==='OTM'?'價外':'價內')
+    var col=s.moneyness==='ITM'?'#F0A500':'#00C896'
+    distTxt='<span style="color:'+col+';font-weight:700">'+lbl+' '+Math.abs(s.distPct).toFixed(2)+'%</span>'
+  }
+  return '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:11px;padding:5px 0;border-top:.5px solid #12202F">'
+    +'<span style="color:#9BA3B8;line-height:1.5">🕑 '+dt+' · <span style="color:'+m.col+';font-weight:600">'+m.icon+' '+m.name+'</span> · <span style="color:#7EA6E0">'+actTxt+'</span> · <span style="color:#C0CDE0">'+(s.ticker||'')+' '+sideTxt+' '+(s.strike!=null?s.strike:'')+'</span></span>'
+    +'<span style="white-space:nowrap">'+(distTxt?distTxt+' · ':'')+'<span style="color:#D8E8F8;font-weight:700">$'+s.underlying+'</span></span></div>'
+}
 function renderEntrySnapshots(containerId){
   var el=document.getElementById(containerId); if(!el) return
-  var snaps=(PORTFOLIO_STATE.trades||[]).filter(function(t){ return t.action==='OPEN' && typeof t.underlyingPriceAtEntry==='number' })
+  var snaps=(PORTFOLIO_STATE.trades||[]).filter(function(t){ return t.action==='OPEN' && t.status!=='closed' && typeof t.underlyingPriceAtEntry==='number' && deriveEntrySnapshot(t) && deriveEntrySnapshot(t).underlying!=null })
   if(!snaps.length) return
-  var cards=snaps.sort(function(a,b){ return (a.tradeDate||'')<(b.tradeDate||'')?1:-1 }).map(_entrySnapshotCard).join('')
-  if(!cards) return
+  snaps.sort(function(a,b){ return (a.tradeDate||'')<(b.tradeDate||'')?1:-1 })   // 最新在前
+  var latest=snaps[0], rest=snaps.slice(1)
+  var latS=deriveEntrySnapshot(latest)
+
+  // ── 最新交易：置頂 + 預設展開 ──
+  var latBlock='<div style="margin:0 0 10px">'
+    +'<div style="display:flex;align-items:center;gap:6px;margin-bottom:5px"><span style="font-size:10px;font-weight:700;color:#0B0E13;background:#C9A227;border-radius:4px;padding:2px 8px">🆕 最新交易 · 操作用</span>'
+      +'<span style="font-size:9px;color:#5A6278">下次下單免再拖 TradingView 時間軸找當時股價</span></div>'
+    +_snapCoreLine(latS)
+    +'<div style="margin-top:6px">'+_entrySnapshotCard(latest)+'</div>'
+  +'</div>'
+
+  // ── 歷史快照：依策略分組 · 預設收合（研究用）──
+  var histInner=''
+  if(rest.length){
+    var order=['wheel','pmcc','bcs','other'], groups={}
+    rest.forEach(function(t){ var c=_snapCat(t); (groups[c]=groups[c]||[]).push(t) })
+    order.forEach(function(c){
+      var list=groups[c]; if(!list||!list.length) return
+      list.sort(function(a,b){ return (a.tradeDate||'')<(b.tradeDate||'')?1:-1 })
+      var m=_SNAP_META[c]
+      var summ=list.map(function(t){ var s=deriveEntrySnapshot(t); return s?_snapCoreLine(s):'' }).join('')
+      var cards=list.map(_entrySnapshotCard).join('')
+      histInner+='<div style="background:#0B0E13;border:.5px solid #223349;border-radius:10px;margin:0 0 8px;overflow:hidden">'
+        +'<div onclick="_toggleSnapGrp(\''+c+'\')" style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;cursor:pointer;user-select:none">'
+          +'<span style="font-size:12px;font-weight:700;color:'+m.col+'">'+m.icon+' '+m.name+' <span style="color:#5A6278;font-weight:500">· '+list.length+' 筆</span></span>'
+          +'<span id="snap-'+c+'-arrow" style="font-size:10px;color:#5A6278;transition:transform .2s">▼ 展開看完整</span>'
+        +'</div>'
+        +'<div style="padding:0 12px 4px">'+summ+'</div>'
+        +'<div id="snap-'+c+'-list" style="display:none;padding:8px 12px 4px;border-top:.5px solid #16233A">'+cards+'</div>'
+      +'</div>'
+    })
+  }
+  var histBlock=''
+  if(histInner){
+    histBlock='<div style="margin-top:4px">'
+      +'<div onclick="_toggleSnapHist()" style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;cursor:pointer;user-select:none;background:#0E141C;border:.5px solid #16233A;border-radius:8px">'
+        +'<span style="font-size:11px;font-weight:700;color:#9BA3B8">📂 歷史快照 · '+rest.length+' 筆（研究用 · 預設收合）</span>'
+        +'<span id="snap-hist-arrow" style="font-size:10px;color:#5A6278;transition:transform .2s">▼ 查看全部歷史</span>'
+      +'</div>'
+      +'<div id="snap-hist-list" style="display:none;margin-top:8px">'+histInner+'</div>'
+    +'</div>'
+  }
+
   var html='<div style="margin:6px 14px 10px"><div style="font-size:11px;font-weight:700;color:#C9A227;margin-bottom:2px">📸 下單快照 Entry Snapshots</div>'
-    +'<div style="font-size:9px;color:#5A6278;margin-bottom:8px;line-height:1.5">下單當下標的股價 · 履約價距離 · 權利金收益率（供未來依市場條件比較歷史交易 · 舊交易無股價者不列）</div>'
-    +cards+'</div>'
+    +'<div style="font-size:9px;color:#5A6278;margin-bottom:8px;line-height:1.5">操作看最新 · 研究看歷史 · 僅顯示在倉部位（舊交易無股價者不列）。價外距離定義：Call =（履約−股價）÷股價、Put =（股價−履約）÷股價，正值為價外 OTM。每筆為獨立時點紀錄，數值接近不代表重複。</div>'
+    +latBlock+histBlock+'</div>'
   el.insertAdjacentHTML('afterbegin', html)
+}
+// ══ 📸 策略卡內嵌交易快照（依 strategyId 過濾 · 保留每筆 OPEN/ROLL · 最新在前 · 缺資料顯示「未記錄」）══
+function _snapSlug(id){ return String(id).replace(/[^A-Za-z0-9]/g,'_') }
+function _snapToggleInCard(ev,slug){ if(ev&&ev.stopPropagation)ev.stopPropagation(); var d=document.getElementById('snaphist-'+slug); if(d) d.style.display=(d.style.display==='none')?'block':'none' }
+function _snapEntryDetail(t){
+  var s=deriveEntrySnapshot(t)||{}
+  var NR='<span style="color:#5A6278;font-style:italic">未記錄</span>'
+  var actTxt=_SNAP_ACT[t.action]||t.action||''
+  var sideTxt=((s.side||'')+' '+(s.optType==='C'?'CALL':s.optType==='P'?'PUT':'')).trim()
+  var acctTxt=(t.account==='sc'?'嘉信':t.account==='ft'?'第一':t.account==='ib'?'IBKR':(t.account||''))
+  var row=function(l,v){ return '<div style="display:flex;justify-content:space-between;gap:8px;font-size:11px;padding:3px 0"><span style="color:#9BA3B8;flex-shrink:0">'+l+'</span><span style="color:#D8E8F8;font-weight:600;text-align:right">'+v+'</span></div>' }
+  var html='<div style="background:#0B0E13;border:.5px solid #223349;border-radius:9px;margin:6px 0;padding:9px 11px">'
+    +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;gap:6px">'
+       +'<span style="font-size:11px;font-weight:700;color:#E6EDF3">'+(s.tradeDate||'—')+' · '+(t.ticker||'')+' '+sideTxt+' '+(s.strike!=null?s.strike:'')+'</span>'
+       +'<span style="font-size:9px;color:#7EA6E0;background:rgba(88,166,255,.1);border:.5px solid #244A6E;border-radius:9px;padding:1px 7px;flex-shrink:0">'+actTxt+(acctTxt?' · '+acctTxt:'')+'</span>'
+    +'</div>'
+  if(t.cycleLabel) html+='<div style="font-size:9px;color:#5A6278;margin-bottom:5px;line-height:1.4">'+t.cycleLabel+'</div>'
+  html+=row('下單時標的股價', s.underlying!=null?'$'+s.underlying:NR)
+  html+=row('到期日 / DTE', (s.expiry||'—')+(s.dte!=null?' · DTE '+s.dte:''))
+  if(s.distPct!=null){ var lbl=s.moneyness==='ATM'?'價平':(s.moneyness==='OTM'?'價外':'價內'); html+=row('履約價距離', lbl+' '+Math.abs(s.distPct).toFixed(2)+'%') } else html+=row('履約價距離', NR)
+  html+=row('開倉權利金/股', s.premium!=null?'$'+s.premium.toFixed(2):NR)
+  if(typeof t.netCashflow==='number') html+=row('開倉淨現金流', (t.netCashflow>=0?'+$':'-$')+Math.abs(t.netCashflow).toLocaleString())
+  html+=row('IV（當日）', s.ivPct!=null?(s.ivPct+'%'+(s.iv!=null?' · IV '+s.iv.toFixed(2)+'%':'')):NR)
+  html+=row('Delta（下單時）', s.delta!=null?((s.delta>0?'+':'')+s.delta.toFixed(2)):NR)
+  var other=[]
+  if(s.prevClose!=null) other.push('前收 $'+s.prevClose)
+  if(s.premarket!=null) other.push('盤前 $'+s.premarket)
+  if(s.dayHigh!=null||s.dayLow!=null) other.push('當日 ▲$'+(s.dayHigh!=null?s.dayHigh.toFixed(2):'—')+' / ▼$'+(s.dayLow!=null?s.dayLow.toFixed(2):'—'))
+  if(other.length) html+='<div style="font-size:9px;color:#5A6278;margin-top:4px">'+other.join(' · ')+'</div>'
+  var rez=t.trigger||t.reason
+  if(rez) html+='<div style="font-size:9px;color:#9BA3B8;margin-top:4px;padding:4px 7px;background:#0E141C;border-left:2px solid #C9A227;border-radius:3px;line-height:1.5">📝 '+rez+'</div>'
+  if(t.action==='ROLL'||t.linkedTradeId) html+='<div style="font-size:9px;color:#7EA6E0;margin-top:3px">🔗 關聯：'+(t.linkedTradeId||'—')+'</div>'
+  return html+'</div>'
+}
+function _isBcsTrade(t){ return /BCS|bear\s*call/i.test((t.cycleId||'')+' '+(t.cycleLabel||'')) }
+// 某張卡要顯示哪些 trade：BCS 虛擬卡取所有 BCS；一般卡取同 strategyId 但排除 BCS（BCS 另外拉出）
+function _snapTradesFor(s){
+  return (PORTFOLIO_STATE.trades||[]).filter(function(t){
+    if(!(t.action==='OPEN'||t.action==='ROLL')) return false
+    return s&&s._isBCS ? _isBcsTrade(t) : (t.strategyId===s.id && !_isBcsTrade(t))
+  })
+}
+function _snapSummaryBanner(s){
+  if(!s||(!s.id&&!s._isBCS)) return ''
+  var trades=_snapTradesFor(s)
+  if(!trades.length) return ''
+  trades.sort(function(a,b){ return (a.tradeDate||'')<(b.tradeDate||'')?1:-1 })
+  var t=trades[0], sn=deriveEntrySnapshot(t)||{}            // 最新一筆
+  var NR='<span style="color:#5A6278">未記錄</span>'
+  var dt=sn.tradeDate||'—'
+  var uTxt=sn.underlying!=null?'$'+sn.underlying:NR
+  var pTxt=sn.premium!=null?'$'+sn.premium.toFixed(2):NR
+  return '<div style="margin:0 14px 10px;padding:6px 10px;background:#0B0E13;border:.5px solid #223349;border-radius:8px;display:flex;align-items:center;gap:6px;font-size:10px;color:#9BA3B8;flex-wrap:wrap">'
+    +'<span style="color:#C9A227;font-weight:700">📸 最新快照</span>'
+    +'<span style="color:#5A6278">·</span><span>'+dt+'</span>'
+    +'<span style="color:#5A6278">· 標的</span><span style="color:#D8E8F8;font-weight:700">'+uTxt+'</span>'
+    +'<span style="color:#5A6278">· 權利金</span><span style="color:#D8E8F8;font-weight:700">'+pTxt+'</span>'
+  +'</div>'
+}
+function _strategySnapSection(s){
+  if(!s||(!s.id&&!s._isBCS)) return ''
+  var trades=_snapTradesFor(s)
+  if(!trades.length) return ''
+  var byDesc=function(a,b){ return (a.tradeDate||'')<(b.tradeDate||'')?1:-1 }
+  // 在倉（status 未平倉的 OPEN）全部展開顯示 · 已平倉 OPEN + ROLL 收進歷史
+  var live=trades.filter(function(t){ return t.action==='OPEN' && t.status!=='closed' }).sort(byDesc)
+  var hist=trades.filter(function(t){ return !(t.action==='OPEN' && t.status!=='closed') }).sort(byDesc)
+  if(!live.length && hist.length){ live=[hist.shift()] }   // 無在倉時至少顯示最新一筆
+  var slug=_snapSlug(s.id||'BCS_VIRTUAL')
+  var html='<div style="margin-top:10px;border-top:.5px solid #1A1F2B;padding-top:8px">'
+    +'<div style="font-size:11px;font-weight:700;color:#C9A227;margin-bottom:1px">📸 交易快照 · 在倉 '+live.length+' 組'+(hist.length?' · 歷史 '+hist.length:'')+'（最新在前）</div>'
+    +'<div style="font-size:9px;color:#5A6278;margin-bottom:2px;line-height:1.4">在倉各組全部顯示；已平倉 / Roll 歷史收合。每筆保留下單時點，缺資料顯示「未記錄」，不以現價或他日數值回填</div>'
+    +live.map(_snapEntryDetail).join('')
+  if(hist.length){
+    html+='<div onclick="_snapToggleInCard(event,\''+slug+'\')" style="font-size:10px;color:#7EA6E0;cursor:pointer;user-select:none;padding:5px 0">▼ 已平倉 / Roll 歷史（'+hist.length+'）</div>'
+      +'<div id="snaphist-'+slug+'" style="display:none">'+hist.map(_snapEntryDetail).join('')+'</div>'
+  }
+  return html+'</div>'
+}
+// BCS（賣 Call 價差）顯示層衍生卡：從 trades 的 BCS cycle 聚合 · 不改 strategyId/帳務/EV
+function _bcsSyntheticStrat(){
+  var bcs=(PORTFOLIO_STATE.trades||[]).filter(function(t){ return t.action==='OPEN' && t.status!=='closed' && _isBcsTrade(t) })
+  if(!bcs.length) return null
+  bcs.sort(function(a,b){ return (a.tradeDate||'')<(b.tradeDate||'')?1:-1 })
+  var cashSum=bcs.reduce(function(a,t){ return a+(typeof t.netCashflow==='number'?t.netCashflow:0) },0)
+  var legs=[], details=[]
+  bcs.forEach(function(t){
+    var acct=t.account==='sc'?'嘉信':t.account==='ft'?'第一':(t.account||'')
+    ;(t.legs||[]).forEach(function(l){
+      legs.push({ type:(/sell/i.test(l)?'SELL CALL':'BUY CALL'), strike:String(l).replace(/^(SELL|BUY)\s*(TO\s*\w+\s*)?/i,'')+' · '+acct, pnl:'', pos:true })
+    })
+    details.push({ label:acct+' 淨 credit', val:(t.netCashflow>=0?'+$':'-$')+Math.abs(t.netCashflow||0).toLocaleString(), cls:'pos' })
+  })
+  var exp=bcs[0].expiry||null
+  return { id:'QQQ_BCS_VIRTUAL', _isBCS:true, name:'QQQ BCS（賣 Call 價差）',
+    sub:'785C/825C · '+bcs.length+' 組（SC+FT）· 機會財',
+    emoji:'🐻', iconBg:'rgba(240,165,0,0.12)', iconColor:'#F0A500', broker:'—',
+    legs:legs, details:details, exp:exp, expiry:exp?exp.slice(5).replace('-','/'):'—',
+    cashflow:(cashSum>=0?'+$':'-$')+Math.abs(cashSum).toLocaleString(), status:'ok',
+    statusLabel:'機會財 · 創新高+價外(Delta 0.15–0.20) · 無承接退場網' }
 }
 // ══ 🏔️ 每月創新高次數 Monthly New Highs（純衍生 · 合計資產滾動高點）══════════
 //  區間新高 = 自 dailyEquity 起算的滾動高點；👑真·歷史新高 = 突破系列前的官方合計 ATH
@@ -6332,7 +6534,7 @@ function renderRecords(m) {
     var _oel = document.getElementById('rec-open')
     if (_oel) _oel.innerHTML = '<div style="padding:32px 16px;text-align:center;font-size:11px;color:#FF4B5C">⚠ 持倉渲染異常 · 詳情見 Console</div>'
   }
-  try { renderEntrySnapshots('rec-open') } catch(e) { console.error('[renderRecords:entrySnapshots]', e) }   // 📸 下單快照
+  // 📸 下單快照已改為內嵌於各策略卡（makeCard → _strategySnapSection）· 不再於頂部獨立渲染（舊 renderEntrySnapshots 保留備用，停止呼叫）
   try {
     renderClosedAccordion('rec-closed', PORTFOLIO_STATE.strategyCards.closed)
   } catch(e) {
@@ -6360,6 +6562,17 @@ function renderStratCards(id, list) {
       catch(e) { console.error('[makeCard:' + (s.id||s.name) + ']', e) }
     })
   })
+  // 🐻 BCS 獨立衍生卡（從摩天輪拉出 · 跨帳戶 · 顯示層聚合，不改帳務）
+  try {
+    var _bcs=_bcsSyntheticStrat()
+    if(_bcs){
+      var bh=document.createElement('div')
+      bh.style.cssText='padding:10px 16px 4px;font-size:10px;font-weight:500;color:#5A6278;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:6px'
+      bh.innerHTML='<i class="ti ti-circle-filled" style="font-size:8px;color:#F0A500"></i>機會財 · BCS（賣 Call 價差 · 跨帳戶）'
+      el.appendChild(bh)
+      el.appendChild(makeCard(_bcs))
+    }
+  } catch(e){ console.error('[makeCard:BCS_VIRTUAL]', e) }
   // Monthly total
   var S = PORTFOLIO_STATE
   // V13.58 雙口徑正名：Collected(開倉實收) vs Realized(完成交易實現損益) · 不再把 Composite 叫「已收」
@@ -6644,10 +6857,12 @@ function makeCard(s) {
         '<span style="font-size:14px;color:#5A6278;transition:transform .2s;flex-shrink:0;font-family:tabler-icons">󰅀</span>' +
       '</div>' +
       (s.sellStrike ? _wheelPhaseBanner(s) : '') +
+      _snapSummaryBanner(s) +
       '<div class="card-detail" style="display:none;border-top:0.5px solid #1A1F2B;padding:10px 14px;background:#0F1420">' +
         '<div style="display:flex;gap:6px;margin-bottom:8px"><span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:20px;font-weight:500;background:'+statusBg+';color:'+statusCol+';border:0.5px solid '+statusCol+'40"><i class="ti '+statusIco+'" style="font-size:11px"></i>'+(s.statusLabel||status)+'</span></div>' +
         legsHtml +
         '<div style="margin-top:4px">'+detailsHtml+'</div>' +
+        _strategySnapSection(s) +
       '</div>' +
     '</div>'
   return wrap
