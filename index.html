@@ -330,11 +330,11 @@ const PORTFOLIO_STATE = {
   accounts: {
     ft: {
       name: '第一證券',
-      nav: 76530.29,
-      buyingPower: 11881.29,
-      cash: 76530,
-      dayChange: 1089.22,
-      lastUpdated: '2026-10-27 收盤',
+      nav: 78521.29,
+      buyingPower: 11958.16,
+      cash: 78521,
+      dayChange: 1990.00,
+      lastUpdated: '2026-10-28 收盤',
       positions: [
         { tk:'QQQ LEAPS',    sh:'685C 2028/12·×1 買@179.50',        pr:'150.00', ch:'-14.00', chp:'(-8.54%)', pos:true,  col:'#1565C0', ic:'Q', status:'ok',   exp:'2028-12-19', spark:[159.75,167.30,170.74,161.50,154.00,154.00,164.00,164.00,150.00] },
         { tk:'QQQ C4 ✅',     sh:'709P/630P · 07/17獲利承接轉PMCC',    pr:'+228',   ch:'已實現', chp:'(30%)',    pos:true,  col:'#1B5E20', ic:'Q', status:'closed', exp:'2026-07-17', spark:[8.0,9.0,10.0,11.0,11.0,9.30,4.65,2.46,5.33] },
@@ -351,11 +351,11 @@ const PORTFOLIO_STATE = {
     },
     sc: {
       name: '嘉信理財',
-      nav: 188648.47,
+      nav: 189774.47,
       buyingPower: 39132.66,
       cash: 83195.97,
-      dayChange: 3690.00,
-      lastUpdated: '2026-10-27 收盤',
+      dayChange: 1126.00,
+      lastUpdated: '2026-10-28 收盤',
       positions: [
         { tk:'SPY LEAPS',    sh:'730C 2028/12·×6',                  pr:'131.00', ch:'+0.56',  chp:'(+0.43%)',  pos:true,  col:'#1565C0', ic:'S', status:'ok',     exp:'2028-12-19', spark:[139.15,139.61,137.52,132.42,131.14,135.00,134.30,130.44,131.00] },
         { tk:'SPY PMCC',     sh:'770C 08/14·×3 SELL @$4.82',        pr:'1.91',   ch:'-1.44',  chp:'(-43.0%)', pos:false, col:'#B71C1C', ic:'S', status:'ok',     exp:'2026-08-14', spark:[4.82,4.82,4.82,4.82,4.82,5.87,4.39,3.35,1.91] },
@@ -404,7 +404,7 @@ const PORTFOLIO_STATE = {
       ]
     },
     sc: {
-      currentATH:  { value: 203914.47, date: '2025-02-21', source: 'broker historical chart manual verification' },
+      currentATH:  { value: 203914.47, date: '2025-02-21', source: 'broker historical chart manual verification', spotSPY: 599.94 },
       previousATH: null,
       athHistory: [
         { value: 203914.47, date: '2025-02-21', note: '券商圖驗證 · 嘉信正式高點' },
@@ -412,7 +412,7 @@ const PORTFOLIO_STATE = {
       ]
     },
     ft: {
-      currentATH:  { value: 80783.25, date: '2026-10-12' },
+      currentATH:  { value: 80783.25, date: '2026-10-12', spotQQQ: 746.04 },
       previousATH: { value: 80646.54, date: '2026-10-06' },
       athHistory: [
         { value: 71191,    date: '2026-05-27', note: '第一證券舊高' },
@@ -484,13 +484,13 @@ const PORTFOLIO_STATE = {
     sc: { principal: 154000, spyBase: 708.78, spyShares: 217.27 },
     ft: { principal: 70000,  qqqBase: 648.04, qqqShares: 108.02 },
     livePrice: {
-      SPY:  769.66,   // 10/27 官方收盤 TV
-      QQQ:  721.25,   // 10/27 官方收盤 TV
-      IBIT:  45.70,   // 10/27 官方收盤 TV
-      BRKB: 542.00,   // 10/27 收盤 截圖(FT)
-      MSFT: 533.01,   // 10/27 收盤 TOS
+      SPY:  772.31,   // 10/28 官方收盤 TV
+      QQQ:  725.61,   // 10/28 官方收盤 TV
+      IBIT:  46.14,   // 10/28 官方收盤 TV
+      BRKB: 542.56,   // 10/28 收盤 截圖(SC watchlist)
+      MSFT: 545.00,   // 10/28 收盤 TOS
       SPCX: 143.69,   // 08/31 收盤 TOS
-      updatedAt: '2026-10-27',
+      updatedAt: '2026-10-28',
       // 'manual'=手動輸入；'tos_screenshot'=截圖解析；'tradingview'=MCP同步
       source: 'tradingview'
     }
@@ -681,6 +681,7 @@ const PORTFOLIO_STATE = {
     { date:'2026-10-23', sc:181440.78, ft:74027.19, ib:1000, total:256467.97 },
     { date:'2026-10-26', sc:184958.47, ft:75447.39, ib:1000, total:261405.86 },
     { date:'2026-10-27', sc:188648.47, ft:76530.29, ib:1000, total:266178.76 },
+    { date:'2026-10-28', sc:189774.47, ft:78521.29, ib:1000, total:269295.76 },
   ],
 
   // ── 資產曲線圖資料（由 _deriveCurves() 從 dailyEquity 自動生成）──
@@ -727,11 +728,11 @@ const PORTFOLIO_STATE = {
       type:'phase2', purpose:'第四組黑天鵝尾部保護（配 729P 收租腿）', action:'BUY TO OPEN',
       contract:'SPY 705P', expiration:'2027-01-15', quantity:5,
       orderDate:'2026-09-16', fillDate:null, fillPrice:null,
-      limitPrice:5.52, currentMark:8.675, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:5.52, currentMark:8.19, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'BS_0916 尾部保護腿 · BUY 705P ×5 @5.52 GTC · 歷史新低權利金掛單 · 可能很晚才成交 · 配 729P ×3 SELL 收租腿(已成交 @9.41)' },
     { id:'GTC_729P_BUYBACK', desc:'SPY 729P NOV30 BUY BACK × 3 · 收租腿自動平倉',
       type:'buyback', orderDate:'2026-09-17', fillDate:null, fillPrice:null,
-      limitPrice:0.20, currentMark:3.54, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:0.20, currentMark:3.09, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'BS_0916 收租腿 729P ×3 買回單 · GTC @0.20 · Theta 歸零等待中' },
   ],
 
@@ -2108,7 +2109,7 @@ var _TV_SPY_BARS = [
   {"date":"2026-08-06","close":768.56},{"date":"2026-08-07","close":773.26},
   {"date":"2026-08-10","close":773.03},{"date":"2026-08-11","close":770.56},
   {"date":"2026-08-12","close":772.49},{"date":"2026-08-13","close":777.88},
-  {"date":"2026-08-14","close":776.34},{"date":"2026-08-17","close":772.67},{"date":"2026-08-18","close":767.45},{"date":"2026-08-19","close":769.06},{"date":"2026-08-20","close":762.60},{"date":"2026-08-21","close":765.72},{"date":"2026-08-24","close":763.47},{"date":"2026-08-25","close":765.91},{"date":"2026-08-26","close":766.08},{"date":"2026-08-27","close":771.10},{"date":"2026-08-28","close":769.35},{"date":"2026-08-31","close":767.05},{"date":"2026-09-01","close":761.78},{"date":"2026-09-02","close":765.16},{"date":"2026-09-03","close":773.17},{"date":"2026-09-04","close":770.19},{"date":"2026-09-08","close":765.96},{"date":"2026-09-09","close":762.40},{"date":"2026-09-10","close":757.83},{"date":"2026-09-11","close":764.29},{"date":"2026-09-12","close":760.88},{"date":"2026-09-15","close":757.39},{"date":"2026-09-16","close":754.05},{"date":"2026-09-17","close":762.60},{"date":"2026-09-18","close":761.69},{"date":"2026-09-19","close":773.50},{"date":"2026-09-22","close":773.38},{"date":"2026-09-23","close":767.81},{"date":"2026-09-24","close":767.18},{"date":"2026-09-25","close":771.35},{"date":"2026-09-28","close":765.61},{"date":"2026-09-29","close":764.20},{"date":"2026-09-30","close":762.63},{"date":"2026-10-01","close":763.99},{"date":"2026-10-02","close":769.64},{"date":"2026-10-05","close":774.83},{"date":"2026-10-06","close":779.09},{"date":"2026-10-07","close":777.22},{"date":"2026-10-08","close":773.93},{"date":"2026-10-09","close":778.57},{"date":"2026-10-12","close":778.10},{"date":"2026-10-13","close":778.01},{"date":"2026-10-14","close":769.60},{"date":"2026-10-15","close":771.79},{"date":"2026-10-16","close":763.25},{"date":"2026-10-19","close":766.48},{"date":"2026-10-20","close":769.05},{"date":"2026-10-21","close":773.09},{"date":"2026-10-22","close":763.96},{"date":"2026-10-23","close":759.97},{"date":"2026-10-26","close":765.37},{"date":"2026-10-27","close":769.66}
+  {"date":"2026-08-14","close":776.34},{"date":"2026-08-17","close":772.67},{"date":"2026-08-18","close":767.45},{"date":"2026-08-19","close":769.06},{"date":"2026-08-20","close":762.60},{"date":"2026-08-21","close":765.72},{"date":"2026-08-24","close":763.47},{"date":"2026-08-25","close":765.91},{"date":"2026-08-26","close":766.08},{"date":"2026-08-27","close":771.10},{"date":"2026-08-28","close":769.35},{"date":"2026-08-31","close":767.05},{"date":"2026-09-01","close":761.78},{"date":"2026-09-02","close":765.16},{"date":"2026-09-03","close":773.17},{"date":"2026-09-04","close":770.19},{"date":"2026-09-08","close":765.96},{"date":"2026-09-09","close":762.40},{"date":"2026-09-10","close":757.83},{"date":"2026-09-11","close":764.29},{"date":"2026-09-12","close":760.88},{"date":"2026-09-15","close":757.39},{"date":"2026-09-16","close":754.05},{"date":"2026-09-17","close":762.60},{"date":"2026-09-18","close":761.69},{"date":"2026-09-19","close":773.50},{"date":"2026-09-22","close":773.38},{"date":"2026-09-23","close":767.81},{"date":"2026-09-24","close":767.18},{"date":"2026-09-25","close":771.35},{"date":"2026-09-28","close":765.61},{"date":"2026-09-29","close":764.20},{"date":"2026-09-30","close":762.63},{"date":"2026-10-01","close":763.99},{"date":"2026-10-02","close":769.64},{"date":"2026-10-05","close":774.83},{"date":"2026-10-06","close":779.09},{"date":"2026-10-07","close":777.22},{"date":"2026-10-08","close":773.93},{"date":"2026-10-09","close":778.57},{"date":"2026-10-12","close":778.10},{"date":"2026-10-13","close":778.01},{"date":"2026-10-14","close":769.60},{"date":"2026-10-15","close":771.79},{"date":"2026-10-16","close":763.25},{"date":"2026-10-19","close":766.48},{"date":"2026-10-20","close":769.05},{"date":"2026-10-21","close":773.09},{"date":"2026-10-22","close":763.96},{"date":"2026-10-23","close":759.97},{"date":"2026-10-26","close":765.37},{"date":"2026-10-27","close":769.66},{"date":"2026-10-28","close":772.31}
 ]
 
 function fetchSPYHistory() {
@@ -5091,6 +5092,15 @@ function renderATH(m) {
       +(_nowSpy!=null?'<div style="font-size:9px;color:#5A6278">現 $'+Number(_nowSpy).toFixed(2)+'</div>':'')
       +'</div>'
     : ''
+  // 各帳戶 ATH 對應基準：嘉信→SPY、第一證券→QQQ（當時收盤 · 由 ath 資料存入）
+  var _athD = PORTFOLIO_STATE.ath || {}
+  var scSpyATH = (_athD.sc && _athD.sc.currentATH && typeof _athD.sc.currentATH.spotSPY==='number') ? _athD.sc.currentATH.spotSPY : null
+  var ftQqqATH = (_athD.ft && _athD.ft.currentATH && typeof _athD.ft.currentATH.spotQQQ==='number') ? _athD.ft.currentATH.spotQQQ : null
+  var _nowQqq = (PORTFOLIO_STATE.alpha && PORTFOLIO_STATE.alpha.livePrice) ? PORTFOLIO_STATE.alpha.livePrice.QQQ : null
+  var scSpyLine = (scSpyATH!=null)
+    ? '<div style="font-size:9px;color:#5A6278;margin:1px 0 4px">📊 當時 SPY <span style="color:#79C0FF;font-weight:600">$'+scSpyATH.toFixed(2)+'</span>'+(_nowSpy!=null?' <span style="color:#3A4055">·</span> 現 $'+Number(_nowSpy).toFixed(2):'')+'</div>' : ''
+  var ftQqqLine = (ftQqqATH!=null)
+    ? '<div style="font-size:9px;color:#5A6278;margin:1px 0 4px">📊 當時 QQQ <span style="color:#00C896;font-weight:600">$'+ftQqqATH.toFixed(2)+'</span>'+(_nowQqq!=null?' <span style="color:#3A4055">·</span> 現 $'+Number(_nowQqq).toFixed(2):'')+'</div>' : ''
 
   el.innerHTML =
     '<div style="font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:12px 16px 5px;display:flex;align-items:center;gap:5px;color:#F0C040"><span style="font-size:13px">👑</span>ATH Sovereignty</div>' +
@@ -5134,7 +5144,8 @@ function renderATH(m) {
         '<div class="ath-col">' +
           '<div style="font-size:10px;color:#9BA3B8;margin-bottom:3px;display:flex;align-items:center;gap:3px"><span style="color:#388BFD">●</span>嘉信單獨 ATH</div>' +
           '<div style="font-size:17px;font-weight:600;color:#79C0FF;margin-bottom:1px">$' + Math.round(sD.displayValue).toLocaleString() + '</div>' +
-          '<div style="font-size:10px;color:#5A6278;margin-bottom:5px">' + scDateLbl + '</div>' +
+          '<div style="font-size:10px;color:#5A6278;margin-bottom:2px">' + scDateLbl + '</div>' +
+          scSpyLine +
           '<div style="font-size:10px;color:#9BA3B8">目前 ' + _fmt$(m.nav.sc) + '</div>' +
           '<div style="font-size:11px;font-weight:500;color:'+scRecCol+';margin-bottom:3px">' + scRecLbl + '</div>' +
           '<div class="pt"><div class="pf" style="width:'+scPct+'%;background:#388BFD"></div></div>' +
@@ -5142,7 +5153,8 @@ function renderATH(m) {
         '<div class="ath-col ath-col-ft">' +
           '<div style="font-size:10px;color:#9BA3B8;margin-bottom:3px;display:flex;align-items:center;gap:3px"><span style="color:#00C896">●</span>第一證券 ATH</div>' +
           '<div style="font-size:17px;font-weight:600;color:#00C896;margin-bottom:1px">$' + Math.round(fD.displayValue).toLocaleString() + '</div>' +
-          '<div style="font-size:10px;color:#5A6278;margin-bottom:5px">' + ftDateLbl + '</div>' +
+          '<div style="font-size:10px;color:#5A6278;margin-bottom:2px">' + ftDateLbl + '</div>' +
+          ftQqqLine +
           '<div style="font-size:10px;color:#9BA3B8">' + ftNote + '</div>' +
           (ftPrev ? '<div style="font-size:9px;color:#7A6A3A;margin:1px 0 2px">📜 '+ftPrev+'</div>' : '') +
           '<div style="font-size:11px;font-weight:500;color:'+ftRecCol+';margin-bottom:3px">' + ftRecLbl + '</div>' +
