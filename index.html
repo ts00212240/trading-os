@@ -330,11 +330,11 @@ const PORTFOLIO_STATE = {
   accounts: {
     ft: {
       name: '第一證券',
-      nav: 62036.04,
-      buyingPower: 18342.83,
-      cash: 62036,
-      dayChange: -9614.37,
-      lastUpdated: '2026-11-05 收盤',
+      nav: 63560.74,
+      buyingPower: 18342.45,
+      cash: 63560,
+      dayChange: 1499.21,
+      lastUpdated: '2026-11-06 收盤',
       positions: [
         { tk:'QQQ LEAPS',    sh:'685C 2028/12·×1 買@179.50',        pr:'150.00', ch:'-14.00', chp:'(-8.54%)', pos:true,  col:'#1565C0', ic:'Q', status:'ok',   exp:'2028-12-19', spark:[159.75,167.30,170.74,161.50,154.00,154.00,164.00,164.00,150.00] },
         { tk:'QQQ C4 ✅',     sh:'709P/630P · 07/17獲利承接轉PMCC',    pr:'+228',   ch:'已實現', chp:'(30%)',    pos:true,  col:'#1B5E20', ic:'Q', status:'closed', exp:'2026-07-17', spark:[8.0,9.0,10.0,11.0,11.0,9.30,4.65,2.46,5.33] },
@@ -351,11 +351,11 @@ const PORTFOLIO_STATE = {
     },
     sc: {
       name: '嘉信理財',
-      nav: 154344.19,
+      nav: 159210.69,
       buyingPower: 20282.88,
       cash: 68846.19,
-      dayChange: -28662.83,
-      lastUpdated: '2026-11-05 收盤',
+      dayChange: 4866.50,
+      lastUpdated: '2026-11-06 收盤',
       positions: [
         { tk:'SPY LEAPS',    sh:'730C 2028/12·×6',                  pr:'131.00', ch:'+0.56',  chp:'(+0.43%)',  pos:true,  col:'#1565C0', ic:'S', status:'ok',     exp:'2028-12-19', spark:[139.15,139.61,137.52,132.42,131.14,135.00,134.30,130.44,131.00] },
         { tk:'SPY PMCC',     sh:'770C 08/14·×3 SELL @$4.82',        pr:'1.91',   ch:'-1.44',  chp:'(-43.0%)', pos:false, col:'#B71C1C', ic:'S', status:'ok',     exp:'2026-08-14', spark:[4.82,4.82,4.82,4.82,4.82,5.87,4.39,3.35,1.91] },
@@ -484,13 +484,13 @@ const PORTFOLIO_STATE = {
     sc: { principal: 154000, spyBase: 708.78, spyShares: 217.27 },
     ft: { principal: 70000,  qqqBase: 648.04, qqqShares: 108.02 },
     livePrice: {
-      SPY:  733.00,   // 11/05 官方收盤 TV（重殺）
-      QQQ:  647.05,   // 11/05 官方收盤 TV（收在低點 −6.5%）
-      IBIT:  43.03,   // 11/05 官方收盤 TV
-      BRKB: 569.60,   // 11/05 收盤 截圖(FT)
-      MSFT: 530.99,   // 11/05 收盤 TOS
+      SPY:  735.29,   // 11/06 官方收盤 TV
+      QQQ:  656.10,   // 11/06 官方收盤 TV
+      IBIT:  42.88,   // 11/06 官方收盤 TV
+      BRKB: 572.50,   // 11/06 收盤 截圖(FT)
+      MSFT: 531.40,   // 11/06 收盤 TOS
       SPCX: 143.69,   // 08/31 收盤 TOS
-      updatedAt: '2026-11-05',
+      updatedAt: '2026-11-06',
       // 'manual'=手動輸入；'tos_screenshot'=截圖解析；'tradingview'=MCP同步
       source: 'tradingview'
     }
@@ -688,6 +688,7 @@ const PORTFOLIO_STATE = {
     { date:'2026-11-03', sc:174425.52, ft:69693.75, ib:1000, total:245119.27 },
     { date:'2026-11-04', sc:183007.02, ft:71648.89, ib:1000, total:255655.91 },
     { date:'2026-11-05', sc:154344.19, ft:62036.04, ib:1000, total:217380.23 },
+    { date:'2026-11-06', sc:159210.69, ft:63560.74, ib:1000, total:223771.43 },
   ],
 
   // ── 資產曲線圖資料（由 _deriveCurves() 從 dailyEquity 自動生成）──
@@ -734,11 +735,11 @@ const PORTFOLIO_STATE = {
       type:'phase2', purpose:'第四組黑天鵝尾部保護（配 729P 收租腿）', action:'BUY TO OPEN',
       contract:'SPY 705P', expiration:'2027-01-15', quantity:5,
       orderDate:'2026-09-16', fillDate:null, fillPrice:null,
-      limitPrice:5.52, currentMark:18.395, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:5.52, currentMark:16.885, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'BS_0916 尾部保護腿 · BUY 705P ×5 @5.52 GTC · 歷史新低權利金掛單 · 可能很晚才成交 · 配 729P ×3 SELL 收租腿(已成交 @9.41)' },
     { id:'GTC_729P_BUYBACK', desc:'SPY 729P NOV30 BUY BACK × 3 · 收租腿自動平倉',
       type:'buyback', orderDate:'2026-09-17', fillDate:null, fillPrice:null,
-      limitPrice:0.20, currentMark:14.73, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:0.20, currentMark:11.765, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'BS_0916 收租腿 729P ×3 買回單 · GTC @0.20 · Theta 歸零等待中 · 11/05 重殺中保護腿大幅升值' },
   ],
 
@@ -2146,7 +2147,7 @@ var _TV_SPY_BARS = [
   {"date":"2026-08-06","close":768.56},{"date":"2026-08-07","close":773.26},
   {"date":"2026-08-10","close":773.03},{"date":"2026-08-11","close":770.56},
   {"date":"2026-08-12","close":772.49},{"date":"2026-08-13","close":777.88},
-  {"date":"2026-08-14","close":776.34},{"date":"2026-08-17","close":772.67},{"date":"2026-08-18","close":767.45},{"date":"2026-08-19","close":769.06},{"date":"2026-08-20","close":762.60},{"date":"2026-08-21","close":765.72},{"date":"2026-08-24","close":763.47},{"date":"2026-08-25","close":765.91},{"date":"2026-08-26","close":766.08},{"date":"2026-08-27","close":771.10},{"date":"2026-08-28","close":769.35},{"date":"2026-08-31","close":767.05},{"date":"2026-09-01","close":761.78},{"date":"2026-09-02","close":765.16},{"date":"2026-09-03","close":773.17},{"date":"2026-09-04","close":770.19},{"date":"2026-09-08","close":765.96},{"date":"2026-09-09","close":762.40},{"date":"2026-09-10","close":757.83},{"date":"2026-09-11","close":764.29},{"date":"2026-09-12","close":760.88},{"date":"2026-09-15","close":757.39},{"date":"2026-09-16","close":754.05},{"date":"2026-09-17","close":762.60},{"date":"2026-09-18","close":761.69},{"date":"2026-09-19","close":773.50},{"date":"2026-09-22","close":773.38},{"date":"2026-09-23","close":767.81},{"date":"2026-09-24","close":767.18},{"date":"2026-09-25","close":771.35},{"date":"2026-09-28","close":765.61},{"date":"2026-09-29","close":764.20},{"date":"2026-09-30","close":762.63},{"date":"2026-10-01","close":763.99},{"date":"2026-10-02","close":769.64},{"date":"2026-10-05","close":774.83},{"date":"2026-10-06","close":779.09},{"date":"2026-10-07","close":777.22},{"date":"2026-10-08","close":773.93},{"date":"2026-10-09","close":778.57},{"date":"2026-10-12","close":778.10},{"date":"2026-10-13","close":778.01},{"date":"2026-10-14","close":769.60},{"date":"2026-10-15","close":771.79},{"date":"2026-10-16","close":763.25},{"date":"2026-10-19","close":766.48},{"date":"2026-10-20","close":769.05},{"date":"2026-10-21","close":773.09},{"date":"2026-10-22","close":763.96},{"date":"2026-10-23","close":759.97},{"date":"2026-10-26","close":765.37},{"date":"2026-10-27","close":769.66},{"date":"2026-10-28","close":772.31},{"date":"2026-10-29","close":769.36},{"date":"2026-10-30","close":755.72},{"date":"2026-11-02","close":752.10},{"date":"2026-11-03","close":754.35},{"date":"2026-11-04","close":766.81},{"date":"2026-11-05","close":733.00}
+  {"date":"2026-08-14","close":776.34},{"date":"2026-08-17","close":772.67},{"date":"2026-08-18","close":767.45},{"date":"2026-08-19","close":769.06},{"date":"2026-08-20","close":762.60},{"date":"2026-08-21","close":765.72},{"date":"2026-08-24","close":763.47},{"date":"2026-08-25","close":765.91},{"date":"2026-08-26","close":766.08},{"date":"2026-08-27","close":771.10},{"date":"2026-08-28","close":769.35},{"date":"2026-08-31","close":767.05},{"date":"2026-09-01","close":761.78},{"date":"2026-09-02","close":765.16},{"date":"2026-09-03","close":773.17},{"date":"2026-09-04","close":770.19},{"date":"2026-09-08","close":765.96},{"date":"2026-09-09","close":762.40},{"date":"2026-09-10","close":757.83},{"date":"2026-09-11","close":764.29},{"date":"2026-09-12","close":760.88},{"date":"2026-09-15","close":757.39},{"date":"2026-09-16","close":754.05},{"date":"2026-09-17","close":762.60},{"date":"2026-09-18","close":761.69},{"date":"2026-09-19","close":773.50},{"date":"2026-09-22","close":773.38},{"date":"2026-09-23","close":767.81},{"date":"2026-09-24","close":767.18},{"date":"2026-09-25","close":771.35},{"date":"2026-09-28","close":765.61},{"date":"2026-09-29","close":764.20},{"date":"2026-09-30","close":762.63},{"date":"2026-10-01","close":763.99},{"date":"2026-10-02","close":769.64},{"date":"2026-10-05","close":774.83},{"date":"2026-10-06","close":779.09},{"date":"2026-10-07","close":777.22},{"date":"2026-10-08","close":773.93},{"date":"2026-10-09","close":778.57},{"date":"2026-10-12","close":778.10},{"date":"2026-10-13","close":778.01},{"date":"2026-10-14","close":769.60},{"date":"2026-10-15","close":771.79},{"date":"2026-10-16","close":763.25},{"date":"2026-10-19","close":766.48},{"date":"2026-10-20","close":769.05},{"date":"2026-10-21","close":773.09},{"date":"2026-10-22","close":763.96},{"date":"2026-10-23","close":759.97},{"date":"2026-10-26","close":765.37},{"date":"2026-10-27","close":769.66},{"date":"2026-10-28","close":772.31},{"date":"2026-10-29","close":769.36},{"date":"2026-10-30","close":755.72},{"date":"2026-11-02","close":752.10},{"date":"2026-11-03","close":754.35},{"date":"2026-11-04","close":766.81},{"date":"2026-11-05","close":733.00},{"date":"2026-11-06","close":735.29}
 ]
 
 function fetchSPYHistory() {
