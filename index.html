@@ -180,6 +180,7 @@ body{background:#0B0E13;color:#FFF;font-family:-apple-system,'SF Pro Display',sa
     <div id="home-ladder-section"></div>
     <div id="home-recovery-section"></div>
     <div id="home-oxygen-section"></div>
+    <div id="home-risklimit-section"></div>
     <div class="sec">月度結果 / Monthly Results</div>
     <!-- V13.74 首頁「持倉」改為「月度結果」accordion（券商持倉改在持倉頁看）· 由 civilizationArchive + dailyEquity + ladder 派生，零硬編月份 -->
     <div id="home-monthly"></div>
@@ -5015,6 +5016,7 @@ function renderHome(m) {
   renderRecovery(m)
   try { renderDrawdownDetail(m) } catch(e) { console.error('[renderDrawdownDetail]', e) }   // V13.84
   renderOxygenMeter(m)
+  try { renderRiskLimitMeter(m) } catch(e) { console.error('[renderRiskLimitMeter]', e) }   // V13.9 個股風控額度計
   renderMonthlyResults()   // V13.74 首頁月度結果 accordion（取代持倉）
   buildMainChart(curAcct, curRange)
 }
@@ -5107,6 +5109,73 @@ function renderOxygenMeter(m) {
 
     // 個別帳戶
     rowsHtml +
+    '</div>'
+}
+
+// ── V13.9 風控額度計：個股衛星桶（單一賭注 ≤2% · 同產業 ≤5% · 基準=最大可定義虧損）──
+function renderRiskLimitMeter(m) {
+  var el = document.getElementById('home-risklimit-section')
+  if (!el) return
+  var S = PORTFOLIO_STATE
+  var rl = S && S.riskLimits, acc = S && S.accounts
+  if (!rl || !acc) { el.innerHTML = ''; return }
+  var totalAssets = ((acc.sc&&acc.sc.nav)||0) + ((acc.ft&&acc.ft.nav)||0) + ((acc.ib&&acc.ib.nav)||0)
+  if (!(totalAssets > 0)) { el.innerHTML = ''; return }
+  var cap = rl.industryPctCap || 5
+  var singleCap = rl.singleBetPctCap || 2
+
+  function col(ratio){                 // ratio = usedPct / cap
+    if (ratio >= 1)    return '#FF4B5C'
+    if (ratio >= 0.7)  return '#F0A500'
+    if (ratio >= 0.5)  return '#F0C040'
+    return '#00C896'
+  }
+  function lab(ratio){
+    if (ratio >= 1)    return '已滿'
+    if (ratio >= 0.7)  return '接近上限'
+    if (ratio >= 0.5)  return '過半'
+    return '充裕'
+  }
+
+  var buckets = rl.buckets || []
+  var rowsHtml = buckets.map(function(b){
+    var used    = (typeof b.maxLossUsd === 'number') ? b.maxLossUsd : 0
+    var usedPct = used / totalAssets * 100
+    var ratio   = cap > 0 ? usedPct / cap : 0
+    var c = col(ratio), l = lab(ratio)
+    var capUsd = cap / 100 * totalAssets
+    var remain = capUsd - used
+    var barW   = Math.min(Math.max(ratio * 100, 0), 100).toFixed(1)
+    var tk = (b.tickers && b.tickers.length) ? ('· ' + b.tickers.join('/')) : ''
+    return '<div style="margin-bottom:12px">' +
+      '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px">' +
+        '<span style="font-size:12px;color:#C8CEDC;font-weight:500">' + b.industry +
+          ' <span style="color:#5A6278;font-weight:400;font-size:10px">' + tk + '</span></span>' +
+        '<span style="font-size:13px;font-weight:700;color:' + c + '">' + usedPct.toFixed(2) +
+          '% <span style="font-size:9px;color:#5A6278;font-weight:400">/ ' + cap + '%</span></span>' +
+      '</div>' +
+      '<div style="background:rgba(255,255,255,0.06);border-radius:4px;height:7px;overflow:hidden">' +
+        '<div style="width:' + barW + '%;height:100%;background:' + c + ';border-radius:4px;transition:width .4s ease"></div>' +
+      '</div>' +
+      '<div style="display:flex;justify-content:space-between;font-size:10px;color:#5A6278;margin-top:4px">' +
+        '<span>已用 $' + Math.round(used).toLocaleString() + '</span>' +
+        '<span style="color:' + c + '">' + l + '</span>' +
+        '<span>' + (remain >= 0 ? '餘 $' + Math.round(remain).toLocaleString()
+                                 : '超 $' + Math.round(-remain).toLocaleString()) + '</span>' +
+      '</div>' +
+      (b.detail ? '<div style="font-size:9px;color:#454B5E;margin-top:3px;line-height:1.4">' + b.detail + '</div>' : '') +
+    '</div>'
+  }).join('')
+  if (!rowsHtml) rowsHtml = '<div style="font-size:11px;color:#5A6278">尚無個股曝險</div>'
+
+  el.innerHTML =
+    '<div class="sec">風控額度計 · 個股衛星桶</div>' +
+    '<div class="card-sm" style="margin:0 16px 10px;padding:14px 16px;background:#141820;border-radius:12px;border:.5px solid rgba(255,255,255,0.06)">' +
+    '<div style="font-size:10px;color:#5A6278;margin-bottom:12px;line-height:1.55">核心=ETF 引擎(防禦+現金流) · 衛星=個股 · 單一賭注 ≤' + singleCap +
+      '% 可全損 · 同產業合計 ≤' + cap + '% · 基準:最大可定義虧損</div>' +
+    rowsHtml +
+    (rl.assignmentNote ? '<div style="font-size:9px;color:#6A7288;margin-top:8px;padding-top:8px;border-top:.5px solid rgba(255,255,255,0.05);line-height:1.5">⚠️ ' + rl.assignmentNote + '</div>' : '') +
+    (rl.indirectNote ? '<div style="font-size:9px;color:#454B5E;margin-top:5px;line-height:1.5">ℹ️ ' + rl.indirectNote + '</div>' : '') +
     '</div>'
 }
 
