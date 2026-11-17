@@ -181,6 +181,7 @@ body{background:#0B0E13;color:#FFF;font-family:-apple-system,'SF Pro Display',sa
     <div id="home-recovery-section"></div>
     <div id="home-oxygen-section"></div>
     <div id="home-risklimit-section"></div>
+    <div id="home-leapscost-section"></div>
     <div class="sec">月度結果 / Monthly Results</div>
     <!-- V13.74 首頁「持倉」改為「月度結果」accordion（券商持倉改在持倉頁看）· 由 civilizationArchive + dailyEquity + ladder 派生，零硬編月份 -->
     <div id="home-monthly"></div>
@@ -331,11 +332,11 @@ const PORTFOLIO_STATE = {
   accounts: {
     ft: {
       name: '第一證券',
-      nav: 70386.62,
-      buyingPower: 10412.55,
-      cash: 70386,
-      dayChange: -633.12,
-      lastUpdated: '2026-11-12 收盤',
+      nav: 62762.90,
+      buyingPower: 9859.46,
+      cash: 62762,
+      dayChange: -4490.14,
+      lastUpdated: '2026-11-16 收盤',
       positions: [
         { tk:'QQQ LEAPS',    sh:'685C 2028/12·×1 買@179.50',        pr:'150.00', ch:'-14.00', chp:'(-8.54%)', pos:true,  col:'#1565C0', ic:'Q', status:'ok',   exp:'2028-12-19', spark:[159.75,167.30,170.74,161.50,154.00,154.00,164.00,164.00,150.00] },
         { tk:'QQQ C4 ✅',     sh:'709P/630P · 07/17獲利承接轉PMCC',    pr:'+228',   ch:'已實現', chp:'(30%)',    pos:true,  col:'#1B5E20', ic:'Q', status:'closed', exp:'2026-07-17', spark:[8.0,9.0,10.0,11.0,11.0,9.30,4.65,2.46,5.33] },
@@ -352,11 +353,11 @@ const PORTFOLIO_STATE = {
     },
     sc: {
       name: '嘉信理財',
-      nav: 181883.03,
-      buyingPower: 13127.22,
-      cash: 64490.53,
-      dayChange: 46.84,
-      lastUpdated: '2026-11-12 收盤',
+      nav: 164277.05,
+      buyingPower: 19383.24,
+      cash: 63946.55,
+      dayChange: -11896.50,
+      lastUpdated: '2026-11-16 收盤',
       positions: [
         { tk:'SPY LEAPS',    sh:'730C 2028/12·×6',                  pr:'131.00', ch:'+0.56',  chp:'(+0.43%)',  pos:true,  col:'#1565C0', ic:'S', status:'ok',     exp:'2028-12-19', spark:[139.15,139.61,137.52,132.42,131.14,135.00,134.30,130.44,131.00] },
         { tk:'SPY PMCC',     sh:'770C 08/14·×3 SELL @$4.82',        pr:'1.91',   ch:'-1.44',  chp:'(-43.0%)', pos:false, col:'#B71C1C', ic:'S', status:'ok',     exp:'2026-08-14', spark:[4.82,4.82,4.82,4.82,4.82,5.87,4.39,3.35,1.91] },
@@ -485,13 +486,13 @@ const PORTFOLIO_STATE = {
     sc: { principal: 154000, spyBase: 708.78, spyShares: 217.27 },
     ft: { principal: 70000,  qqqBase: 648.04, qqqShares: 108.02 },
     livePrice: {
-      SPY:  757.12,   // 11/12 官方收盤 TV
-      QQQ:  688.17,   // 11/12 官方收盤 TV
-      IBIT:  40.36,   // 11/12 官方收盤 TV
-      BRKB: 589.79,   // 11/12 收盤 截圖(FT)
-      MSFT: 521.80,   // 11/12 收盤 TOS
-      SPCX: 141.34,   // 11/12 收盤 TOS
-      updatedAt: '2026-11-12',
+      SPY:  739.95,   // 11/16 官方收盤 TV
+      QQQ:  661.75,   // 11/16 官方收盤 TV
+      IBIT:  36.79,   // 11/16 官方收盤 TV
+      BRKB: 591.21,   // 11/16 收盤 TOS
+      MSFT: 519.45,   // 11/16 收盤 TOS
+      SPCX: 137.89,   // 11/16 收盤 TOS
+      updatedAt: '2026-11-16',
       // 'manual'=手動輸入；'tos_screenshot'=截圖解析；'tradingview'=MCP同步
       source: 'tradingview'
     }
@@ -694,6 +695,8 @@ const PORTFOLIO_STATE = {
     { date:'2026-11-10', sc:172756.19, ft:67124.06, ib:1000, total:240880.25 },
     { date:'2026-11-11', sc:181836.19, ft:71019.74, ib:1000, total:253855.93 },
     { date:'2026-11-12', sc:181883.03, ft:70386.62, ib:1000, total:253269.65 },
+    { date:'2026-11-13', sc:176173.55, ft:67253.04, ib:1000, total:244426.59 },
+    { date:'2026-11-16', sc:164277.05, ft:62762.90, ib:1000, total:228039.95 },
   ],
 
   // ── 資產曲線圖資料（由 _deriveCurves() 從 dailyEquity 自動生成）──
@@ -740,12 +743,12 @@ const PORTFOLIO_STATE = {
       type:'phase2', purpose:'第四組黑天鵝尾部保護（配 729P 收租腿）', action:'BUY TO OPEN',
       contract:'SPY 700P', expiration:'2027-02-19', quantity:5,
       orderDate:'2026-10-23', fillDate:null, fillPrice:null,
-      limitPrice:5.52, currentMark:8.845, broker:'嘉信', strategy:'SPY_BlackSwan',
+      limitPrice:5.52, currentMark:13.335, broker:'嘉信', strategy:'SPY_BlackSwan',
       note:'BS_0916 尾部保護腿 · BUY 700P ×5 @5.52 GTC · 配 729P ×3 SELL 收租腿(已成交 @9.41) · 10/23 由原 705P/15 JAN 27 滾倉改掛為 700P/19 FEB 27(舊合約 <90 DTE 老化·保護腿往遠月滾·維持尾部保護有效性) · 歷史新低權利金掛單·可能很晚才成交' },
     { id:'GTC_729P_BUYBACK', desc:'SPY 729P NOV30 BUY BACK × 3 · 收租腿自動平倉',
       type:'buyback', orderDate:'2026-09-17', fillDate:null, fillPrice:null,
-      limitPrice:0.20, currentMark:2.53, broker:'嘉信', strategy:'SPY_BlackSwan',
-      note:'BS_0916 收租腿 729P ×3 買回單 · GTC @0.20 · Theta 歸零等待中 · 11/05 重殺中保護腿大幅升值 · 11/12 收盤 mark 2.53 · 緩步回落中,接近 0.20 平倉目標' },
+      limitPrice:0.20, currentMark:6.525, broker:'嘉信', strategy:'SPY_BlackSwan',
+      note:'BS_0916 收租腿 729P ×3 買回單 · GTC @0.20 · 11/16 市場重挫(SPY 739.95 · −16%回撤)· 保護腿價值大升 mark 6.525 · 黑天鵝避險正在生效' },
   ],
 
   // ── 文明旅程 事件（重大節點）──────────────────────────────────
@@ -1468,8 +1471,8 @@ const PORTFOLIO_STATE = {
     { id:'MSFT_Wheel_FT',  acct:'第一', type:'Put Spread',     col:'#0277BD', typeGroup:'wheel',      open:1, closed:0, totalProfit:0,    totalLoss:0,  currentPrem:457, monthPnl:457,   monthNote:'C1 平倉+$411(90%) + C2 $538(08/21·07/18新開)', note:'[C1] 355P/315P·07/24 ✅ 07/18平倉 淨$411(90%) | [C2] 355P/315P·08/21 · 07/18開@$5.38 · MSFT-2%+IV>70 條件驅動 · 相同履約價權利金更厚 · 第一證券' },
     { id:'SPCX_Wheel',    acct:'第一', type:'Put Spread',     col:'#E67E22', typeGroup:'wheel',      open:0, closed:1, totalProfit:0,    totalLoss:1168,  currentPrem:-1168, monthPnl:-1168,   monthNote:'C1 虧損 -$1,168（06/23緊急平倉，SPCX暴跌）', note:'[C1] 170P/125P · 06/23 SPCX-30.40 緊急平倉 ❌ 淨虧-$1,168（收$782·還$1,950）' , broker:'第一', emoji:'🛡️', iconColor:'#E67E22', iconBg:'rgba(230,126,34,0.12)', name:'SPCX Put Spread · Cycle 1', sub:'170P / 125P · ×1 · 已平倉 06/23', cashflow:'-$1,168', totalPnl:-1168, expiry:'06/23', exp:'2026-06-23', status:'closed', sellStrike:170, underlying:'SPCX', statusLabel:'已平倉 ❌', civBeta:{val:0.0,bm:'SPCX'}, legs:[{type:'SELL PUT',strike:'170P · 07/17 · ×1',pnl:'+$782 原收',pos:true},{type:'BUY PUT',strike:'125P · 07/17 · ×1',pnl:'保護腿',pos:false},{type:'CLOSED',strike:'06/23 緊急平倉 @$19.50 Debit',pnl:'-$1,950 平倉成本',pos:false}], details:[{label:'平倉日',val:'2026-06-23 · SPCX 暴跌 -30.40',cls:'neg'},{label:'已實現損失',val:'-$1,168 · 入$782 / 出$1,950',cls:'neg'},{label:'SPCX 暴跌',val:'185.00 → 154.60 (-16.4%)',cls:'neg'},{label:'教訓',val:'投機部位 → 無法持有 → 提早出場',cls:'warn'}] },
     { id:'SPY_Wheel',      acct:'嘉信', type:'Put Spread',     col:'#3FB950', typeGroup:'wheel',      open:0, closed:3, totalProfit:2196, totalLoss:0,  currentPrem:0,  monthPnl:2196,  monthNote:'C1 $669 + C2 $804(已平 06/15 80%) + C3 $723(07/10平倉 82%)', note:'[C1] 711P/650P·06/05 ✅ 提早平倉轉倉 $669 | [C2] 723P/655P·06/26 ✅ 平倉 06/15 淨$804 (81%) | [C3] 732P/672P·07/17 ✅ 07/10 82%提前平倉 淨$723 · 換開 QQQ C6(嘉信)' , broker:'嘉信', emoji:'🛡️', iconColor:'#3FB950', iconBg:'rgba(63,185,80,0.12)', name:'SPY 豪華摩天輪 · Cycle 3', sub:'732P / 672P · ×2 · 已平倉 07/10 ✅', cashflow:'+$2,196', totalPnl:2196, expiry:'07/17', exp:'2026-07-17', status:'ok', sellStrike:732, underlying:'SPY', statusLabel:'C3平倉+$723 · 等待新循環', civBeta:{val:0.13,bm:'SPY'}, legs:[{type:'CLOSED',strike:'732P · 07/17 · ×2 · 07/10買回@$1.00',pnl:'+$919 已實現 (82%)',pos:true},{type:'CLOSED',strike:'672P · 07/17 · ×2 · 07/09賣出@$0.07',pnl:'-$197 保護腿成本',pos:false}], details:[{label:'C3 結算',val:'07/10平倉 · 開倉淨收$907 · 平倉付$185 · 淨利+$723 (80%)',cls:'pos'},{label:'開倉規則 2.0',val:'不自動重開 C4 · 條件驅動：下跌+IV高+更低履約+BP允許（07/15備忘錄）',cls:''},{label:'單腿獲利',val:'732P +$919 (82%) · SPY反彈751 · 換開QQQ C6',cls:'pos'},{label:'Cycle 2',val:'淨利 $804 ✅ 06/15 80%平倉',cls:'pos'},{label:'Cycle 1',val:'淨利 $669 ✅ (06/05早平轉倉)',cls:'pos'},{label:'EV/Trade',val:'+$732 avg (3 closed)',cls:'pos'}] },
-    { id:'NVDA_PMCC', acct:'嘉信', type:'PMCC', col:'#76B900', typeGroup:'pmcc', open:2, closed:0, totalProfit:0, totalLoss:0, currentPrem:300, monthPnl:0, monthNote:'11/12 新建 · 155C LEAPS(2029/01) + SELL 191C(12/18) @3.00(+$300)', note:'NVDA 合理價抵達安全邊際 · 11/12 建 155C LEAPS @50.10(2029/01·Δ0.68·798DTE) + SELL 191C 12/18 @3.00(+$300) · 長天期價內 LEAPS 作底層', broker:'嘉信', emoji:'📈', iconColor:'#76B900', iconBg:'rgba(118,185,0,0.12)', name:'NVDA PMCC', sub:'LEAPS 155C (2029/01) + SELL 191C (12/18) · ×1', cashflow:'-$4,710', totalPnl:0, expiry:'12/18', exp:'2026-12-18', status:'ok', statusLabel:'11/12 新建 · 合理價安全邊際進場', civBeta:{val:0.0,bm:'NVDA'}, legs:[{type:'BUY CALL',strike:'155C · 2029/01 · ×1 · 買@$50.10',pnl:'LEAPS 底層 · NVDA 159.97 · Δ0.68 · 798 DTE',pos:true},{type:'SELL CALL',strike:'191C · 12/18 · ×1 · 賣@$3.00',pnl:'+$300 已收 · Δ−0.20 · 遠OTM',pos:true}], details:[{label:'LEAPS',val:'155C × 1 · 2029/01 · 買@$50.10 · 內在$5 · Δ0.68',cls:''},{label:'SELL CALL',val:'191C · 12/18 · @$3.00 = +$300 · 遠OTM · 極端IV',cls:'pos'},{label:'進場邏輯',val:'BOS 合理價抵達安全邊際 · NVDA −7.92% · 長天期降 theta',cls:''},{label:'淨現金',val:'−$5,010 LEAPS + $300 短腿 = −$4,710',cls:''}] },
-    { id:'NVDA_豪華摩天輪', acct:'嘉信', type:'Wheel/Put Spread', col:'#76B900', typeGroup:'wheel', open:1, closed:0, totalProfit:0, totalLoss:0, currentPrem:357, monthPnl:0, monthNote:'C1 135P/107P·12/18 淨 credit $357(11/12新開)', note:'[C1] 135P/107P·12/18 · 11/12 開首組 · NVDA 159.97(−7.92%)·極端IV · 淨 credit $357', broker:'嘉信', emoji:'🎡', iconColor:'#76B900', iconBg:'rgba(118,185,0,0.12)', name:'NVDA 豪華摩天輪 · C1', sub:'135P / 107P · ×1 · 12/18 · 嘉信', cashflow:'+$357', totalPnl:0, expiry:'12/18', exp:'2026-12-18', status:'ok', sellStrike:135, underlying:'NVDA', statusLabel:'C1 收租中 · 極端IV 進場', civBeta:{val:0.0,bm:'NVDA'}, legs:[{type:'SELL PUT',strike:'135P · 12/18 · ×1 · 賣@$4.43',pnl:'credit $443 · Δ−0.18 · −16% 價外',pos:true},{type:'BUY PUT',strike:'107P · 12/18 · ×1 · 買@$0.86',pnl:'保護腿 · 淨 credit $357',pos:false}], details:[{label:'C1 新開',val:'12/18 · 135P/107P · NVDA 159.97(−7.92%)· 淨 credit $357 · 36 DTE',cls:'pos'},{label:'保護腿',val:'107P · 下方保護 · 最大風險鎖定',cls:''},{label:'進場邏輯',val:'NVDA 大跌+極端IV · bull put spread 收租',cls:''}] },
+    { id:'NVDA_PMCC', acct:'嘉信', type:'PMCC', col:'#76B900', typeGroup:'pmcc', open:1, closed:1, totalProfit:0, totalLoss:35, currentPrem:0, monthPnl:-35, monthNote:'11/12建155C LEAPS + SELL 191C @3.00 · 11/13財報前買回191C @3.35(實現−$35)·留LEAPS裸多', note:'NVDA 合理價抵達安全邊際 · 11/12 建 155C LEAPS @50.10(2029/01·Δ0.68·798DTE) + SELL 191C 12/18 @3.00(+$300) · 長天期價內 LEAPS 作底層', broker:'嘉信', emoji:'📈', iconColor:'#76B900', iconBg:'rgba(118,185,0,0.12)', name:'NVDA PMCC', sub:'LEAPS 155C (2029/01) · 191C已買回 · 裸多過財報', cashflow:'-$5,045', totalPnl:-35, expiry:'12/18', exp:'2026-12-18', status:'ok', statusLabel:'財報前買回191C(−$35)·留155C LEAPS裸多過11/17財報', civBeta:{val:0.0,bm:'NVDA'}, legs:[{type:'BUY CALL',strike:'155C · 2029/01 · ×1 · 買@$50.10',pnl:'LEAPS 底層 · NVDA 159.97 · Δ0.68 · 798 DTE',pos:true},{type:'SELL CALL',strike:'191C · 12/18 · ×1 · 賣@$3.00',pnl:'+$300 已收 · Δ−0.20 · 遠OTM',pos:true}], details:[{label:'LEAPS',val:'155C × 1 · 2029/01 · 買@$50.10 · 內在$5 · Δ0.68',cls:''},{label:'SELL CALL',val:'191C · 12/18 · @$3.00 = +$300 · 遠OTM · 極端IV',cls:'pos'},{label:'進場邏輯',val:'BOS 合理價抵達安全邊際 · NVDA −7.92% · 長天期降 theta',cls:''},{label:'淨現金',val:'−$5,010 LEAPS + $300 短腿 = −$4,710',cls:''}] },
+    { id:'NVDA_豪華摩天輪', acct:'嘉信', type:'Wheel/Put Spread', col:'#76B900', typeGroup:'wheel', open:0, closed:1, totalProfit:150, totalLoss:0, currentPrem:357, monthPnl:150, monthNote:'C1 135P/107P·11/12開@3.57→11/13平@2.07·實現+$150(42%·1天)', note:'[C1] 135P/107P·12/18 · 11/12 開首組 · NVDA 159.97(−7.92%)·極端IV · 淨 credit $357', broker:'嘉信', emoji:'🎡', iconColor:'#76B900', iconBg:'rgba(118,185,0,0.12)', name:'NVDA 豪華摩天輪 · C1', sub:'135P / 107P · ×1 · 已平倉 11/13 ✅', cashflow:'+$150', totalPnl:150, expiry:'12/18', exp:'2026-12-18', status:'ok', sellStrike:135, underlying:'NVDA', statusLabel:'C1 財報前獲利了結 +$150(42%·1天)', civBeta:{val:0.0,bm:'NVDA'}, legs:[{type:'SELL PUT',strike:'135P · 12/18 · ×1 · 賣@$4.43',pnl:'credit $443 · Δ−0.18 · −16% 價外',pos:true},{type:'BUY PUT',strike:'107P · 12/18 · ×1 · 買@$0.86',pnl:'保護腿 · 淨 credit $357',pos:false}], details:[{label:'C1 新開',val:'12/18 · 135P/107P · NVDA 159.97(−7.92%)· 淨 credit $357 · 36 DTE',cls:'pos'},{label:'保護腿',val:'107P · 下方保護 · 最大風險鎖定',cls:''},{label:'進場邏輯',val:'NVDA 大跌+極端IV · bull put spread 收租',cls:''}] },
   ],
 
   // ── 本月權利金合計（手動維護直到串接 API）────────────────────
@@ -1505,9 +1508,9 @@ const PORTFOLIO_STATE = {
     assignmentNote: '承接(被指派)會吃掉產業額度:承接後重新量,頂到上限前不得開新個股',
     indirectNote: 'NVDA 為 QQQ 第一大持股(~8-9%)· 此 5% 管「直接選股」額外集中,疊在 QQQ 間接科技曝險之上',
     buckets: [
-      { industry:'科技/AI 個股', tickers:['NVDA'], maxLossUsd:7153,
-        detail:'NVDA PMCC 最大虧 $4,710 + NVDA 摩天輪最大虧 $2,443',
-        note:'以 2026-11-12 總資產 ~253,856 計 ≈ 2.82% · 距 5% 上限尚餘 ~$5,540' }
+      { industry:'科技/AI 個股', tickers:['NVDA'], maxLossUsd:5010,
+        detail:'NVDA 155C LEAPS(2029/01)權利金 $5,010 · 摩天輪+191C 已於 11/13 財報前平倉',
+        note:'財報前減碼,僅剩 LEAPS 裸多 ≈ 總資產 2.0% · 距 5% 上限更寬裕' }
     ],
     updatedAt: '2026-11-12'
   },
@@ -1666,7 +1669,7 @@ const PORTFOLIO_STATE = {
     { id:'T_QQQPMCC_690C_C', strategyId:'QQQ_PMCC', strategyName:'QQQ PMCC', ledgerType:'leaps_close', cycleId:'QQQ_PMCC_FT_690C', cycleLabel:'QQQ PMCC · 690C LEAPS 平倉 (→換 685C)', account:'ft', ticker:'QQQ', action:'CLOSE', tradeDate:'2026-06-01', expiry:'2028-12-15', quantity:1, legs:['SELL TO CLOSE 690C ×1 @178.06'], grossCashflow:17806, fees:null, netCashflow:17806, proceeds:17806, costBasis:13850, realizedPnl:3956, pct:null, status:'closed', isUnderlying:true, excludeFromEV:true, linkedTradeId:'T_QQQPMCC_690C_O', ledgerId:'CF_M06_002', note:'690C 平倉 @178.06 · realizedPnl = proceeds 17806 − costBasis 13850 = +$3,956（方向性資本利得，非現金流；換入 685C 新底層）' },
     { id:'T_QQQPMCC_710C_O', strategyId:'QQQ_PMCC', strategyName:'QQQ PMCC', ledgerType:'pmcc', cycleId:'QQQ_PMCC_FT_710C', cycleLabel:'QQQ PMCC · 710C × 1 · 06/05', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-05-06', expiry:'2026-06-05', quantity:1, legs:['SELL 710C ×1 @8.68'], grossCashflow:868, fees:null, netCashflow:868, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQPMCC_710C_C', note:'短Call · 05/06 開倉 @8.68 · credit +$868' },
     { id:'T_QQQPMCC_710C_C', strategyId:'QQQ_PMCC', strategyName:'QQQ PMCC', ledgerType:'pmcc', cycleId:'QQQ_PMCC_FT_710C', cycleLabel:'QQQ PMCC · 710C × 1 · 05/06~06/01', account:'ft', ticker:'QQQ', action:'CLOSE', tradeDate:'2026-06-01', expiry:'2026-06-05', quantity:1, legs:['BUY TO CLOSE 710C ×1 @28.84'], grossCashflow:-2884, fees:null, netCashflow:-2884, realizedPnl:-2016, pct:null, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQPMCC_710C_O', ledgerId:'CF_M06_002b', note:'710C 買回 @28.84 · realizedPnl = credit 868 − debit 2884 = −$2,016（QQQ 漲，短Call 被咬）' },
-    { id:'T_QQQPMCC_LEAPS685_O', strategyId:'QQQ_PMCC', strategyName:'QQQ PMCC', ledgerType:'pmcc', cycleId:'QQQ_PMCC_FT_LEAPS', cycleLabel:'QQQ LEAPS 685C × 1 · 2028/12', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-05-28', expiry:'2028-12-15', quantity:1, legs:['BUY 685C ×1 @179.50'], grossCashflow:-17950, fees:null, netCashflow:-17950, realizedPnl:null, status:'open', isUnderlying:true, linkedTradeId:null, note:'底層 LEAPS 持倉中' },
+    { id:'T_QQQPMCC_LEAPS685_O', strategyId:'QQQ_PMCC', strategyName:'QQQ PMCC', ledgerType:'pmcc', cycleId:'QQQ_PMCC_FT_LEAPS', cycleLabel:'QQQ LEAPS 685C × 1 · 2028/12', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-05-28', expiry:'2028-12-15', quantity:1, legs:['BUY 685C ×1 @179.50'], grossCashflow:-17950, fees:null, netCashflow:-17950, realizedPnl:null, status:'open', isUnderlying:true, linkedTradeId:null, strike:685, optType:'C', underlyingPriceAtEntry:730, entryPremiumPerShare:179.50, entryPriceSource:'手動·回填(使用者提供)', entryNote:'原始底層(第一)· 2026-05-28 由 690C 換約為 685C · 進場時 QQQ 730 · BUY @179.50', note:'底層 LEAPS 持倉中 · 原始底層,非承接 · 進場 QQQ 730' },
     { id:'T_QQQPMCC_770C_O',  strategyId:'QQQ_PMCC', strategyName:'QQQ PMCC', ledgerType:'pmcc', cycleId:'QQQ_PMCC_FT_770C', cycleLabel:'QQQ PMCC · 770C × 1', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:null, expiry:'2026-06-26', quantity:1, legs:['SELL 770C ×1 @6.10'], grossCashflow:610, fees:null, netCashflow:610, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQPMCC_770C_C', note:'開倉日待補' },
     { id:'T_QQQPMCC_770C_C',  strategyId:'QQQ_PMCC', strategyName:'QQQ PMCC', ledgerType:'pmcc', cycleId:'QQQ_PMCC_FT_770C', cycleLabel:'QQQ PMCC · 770C × 1', account:'ft', ticker:'QQQ', action:'CLOSE', tradeDate:'2026-06-09', expiry:'2026-06-26', quantity:1, legs:['BUY TO CLOSE 770C @1.20'], grossCashflow:-120, fees:null, netCashflow:-120, realizedPnl:490, pct:80.3, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQPMCC_770C_O', ledgerId:'CF_M06_006', note:'770C · 06/09 80% 獲利平倉' },
     { id:'T_QQQPMCC_775C_O',  strategyId:'QQQ_PMCC', strategyName:'QQQ PMCC', ledgerType:'pmcc', cycleId:'QQQ_PMCC_FT_775C', cycleLabel:'QQQ PMCC · 775C × 1 · 07/17', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-06-17', expiry:'2026-07-17', quantity:1, legs:['SELL 775C ×1 @7.15'], grossCashflow:715, fees:null, netCashflow:715, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQPMCC_775C_C', note:'06/17 開倉 @$7.15' },
@@ -1691,7 +1694,7 @@ const PORTFOLIO_STATE = {
     { id:'T_QQQW_C3_C', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', cycleId:'QQQ_WHEEL_FT_C3', cycleLabel:'QQQ 豪華摩天輪 C3 · 680P/590P · 獲利平倉', account:'ft', ticker:'QQQ', action:'CLOSE', tradeDate:'2026-07-03', expiry:'2026-07-10', quantity:1, legs:['CLOSE @2.22'], grossCashflow:-222, fees:null, netCashflow:-222, realizedPnl:521, pct:70.1, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_C3_O', ledgerId:'CF_M07_002', note:'QQQ連跌2日(-12觸2%警戒) · 70%獲利平倉@$2.22 · 換開C5' },
     { id:'T_QQQW_C4_O', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', cycleId:'QQQ_WHEEL_FT_C4', cycleLabel:'QQQ 豪華摩天輪 · C4 · 709P/630P × 1 · 07/17', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:null, expiry:'2026-07-17', quantity:1, legs:['SELL 709P','BUY 630P'], grossCashflow:761, fees:null, netCashflow:761, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_C4_C', note:'開倉日待補 · FT 顯示 709P 成本 $9.30 與紀錄 credit 差異待對帳 · 07/17 獲利承接平倉' },
     { id:'T_QQQW_C4_C', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', cycleId:'QQQ_WHEEL_FT_C4', cycleLabel:'QQQ 豪華摩天輪 C4 · 709P/630P · 07/17 獲利承接轉PMCC', account:'ft', ticker:'QQQ', action:'CLOSE', tradeDate:'2026-07-17', expiry:'2026-07-17', quantity:1, legs:['BUY TO CLOSE 709P + SELL TO CLOSE 630P · 整組 @5.33 Debit 限價'], grossCashflow:-533, fees:null, netCashflow:-533, realizedPnl:228, pct:30.0, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_650C_O', ledgerId:'CF_M07_006', lifecycleStage:'Wheel承接轉PMCC', entryUnderlyingPrice:708, trigger:'QQQ 單日下跌約 -1.5%~-2%，接近短 Put 履約價，原 Put Spread 仍獲利', reason:'不等待被動到期，主動以獲利中的 Put Spread 承接：預先掛低於現價約 $4 的限價單，3:45 左右 QQQ 跌近 -2% 時成交，轉入 LEAPS + Sell Call 的 PMCC 生命週期', note:'原 Put Spread 仍獲利 · 主動獲利承接 @$5.33 限價 · 淨+$228 (30%) · 既有摩天輪生命週期的一部分，非新策略' },
-    { id:'T_QQQW_650C_O', originStrategy:'QQQ_豪華摩天輪', currentStrategy:'QQQ_PMCC', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', structureType:'PMCC_AFTER_ASSIGNMENT', cycleId:'QQQ_WHEEL_FT_C4CONV_LEAPS', cycleLabel:'QQQ 摩天輪轉換 · 650C 深價內 · 2027/09/17', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-07-17', expiry:'2027-09-17', quantity:1, legs:['BUY 650C ×1 @132.48 限價'], grossCashflow:-13248, fees:null, netCashflow:-13248, realizedPnl:null, status:'open', isUnderlying:true, linkedTradeId:'T_QQQW_C4_C', lifecycleStage:'Wheel承接轉PMCC', entryUnderlyingPrice:708, trigger:'C4 獲利承接', reason:'摩天輪生命週期轉換的 LEAPS 底層', note:'獲利承接建立 · 深價內（QQQ 708 vs 650 · 內在值約 $58）· 427 DTE · 非新策略' },
+    { id:'T_QQQW_650C_O', originStrategy:'QQQ_豪華摩天輪', currentStrategy:'QQQ_PMCC', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', structureType:'PMCC_AFTER_ASSIGNMENT', cycleId:'QQQ_WHEEL_FT_C4CONV_LEAPS', cycleLabel:'QQQ 摩天輪轉換 · 650C 深價內 · 2027/09/17', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-07-17', expiry:'2027-09-17', quantity:1, legs:['BUY 650C ×1 @132.48 限價'], grossCashflow:-13248, fees:null, netCashflow:-13248, realizedPnl:null, status:'open', isUnderlying:true, linkedTradeId:'T_QQQW_C4_C', lifecycleStage:'Wheel承接轉PMCC', entryUnderlyingPrice:708, strike:650, optType:'C', underlyingPriceAtEntry:708, entryPremiumPerShare:132.48, entryPriceSource:'手動·下單當下報價(TOS)', trigger:'C4 獲利承接', reason:'摩天輪生命週期轉換的 LEAPS 底層', note:'獲利承接建立 · 深價內（QQQ 708 vs 650 · 內在值約 $58）· 427 DTE · 非新策略' },
     { id:'T_QQQW_750C_O', originStrategy:'QQQ_豪華摩天輪', currentStrategy:'QQQ_PMCC', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', cycleId:'QQQ_WHEEL_FT_C4CONV_750C', cycleLabel:'QQQ 摩天輪轉換 · SELL 750C · 08/21', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-07-17', expiry:'2026-08-21', quantity:1, legs:['SELL 750C ×1 @5.28 市價'], grossCashflow:528, fees:null, netCashflow:528, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_750C_C', lifecycleStage:'Wheel承接轉PMCC', entryUnderlyingPrice:708, trigger:'C4 獲利承接', reason:'PMCC 生命週期的 Sell Call 腿', note:'承接結構 SELL CALL 腿 · +$528 · 08/12 買回 roll 到 755C 09/11' },
     { id:'T_QQQW_750C_C', originStrategy:'QQQ_豪華摩天輪', currentStrategy:'QQQ_PMCC', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', cycleId:'QQQ_WHEEL_FT_C4CONV_750C', cycleLabel:'QQQ 承接結構 · 750C 08/21 · 買回 roll', account:'ft', ticker:'QQQ', action:'CLOSE', tradeDate:'2026-08-12', expiry:'2026-08-21', quantity:1, legs:['BUY TO CLOSE 750C ×1 @0.82 限價'], grossCashflow:-82, fees:null, netCashflow:-82, realizedPnl:446, pct:84.5, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_755C_O', ledgerId:'CF_M08_002', note:'750C 08/21 · 07/17開@5.28 (+$528) · 08/12買回@0.82 (-$82) · 實現 +$446 (84.5%) · roll up/out 到 755C 09/11' },
     { id:'T_QQQW_755C_O', originStrategy:'QQQ_豪華摩天輪', currentStrategy:'QQQ_PMCC', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', structureType:'PMCC_AFTER_ASSIGNMENT', cycleId:'QQQ_WHEEL_FT_C4CONV_755C', cycleLabel:'QQQ 承接結構 · SELL 755C · 09/11', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-08-12', expiry:'2026-09-11', quantity:1, legs:['SELL 755C ×1 @4.86 市價'], grossCashflow:486, fees:null, netCashflow:486, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_755C_C', lifecycleStage:'Wheel承接轉PMCC', reason:'承接結構 sell call roll up/out · 750C 08/21平→755C 09/11', note:'承接結構 SELL CALL 腿(roll) · +$486 · 30 DTE · 與 770C 09/04 並行' },
@@ -1723,8 +1726,11 @@ const PORTFOLIO_STATE = {
     // ── 2026-11-12 新開三組：QQQ 摩天輪(第一) + NVDA PMCC(嘉信) + NVDA 摩天輪(嘉信) ──
     { id:'T_QQQW_C15_O', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', cycleId:'QQQ_WHEEL_FT_C15', cycleLabel:'QQQ 豪華摩天輪 · C15 · 655P/569.78P × 1 · 12/18 · 第一', account:'ft', ticker:'QQQ', action:'OPEN', tradeDate:'2026-11-12', expiry:'2026-12-18', quantity:1, legs:['SELL 655P ×1','BUY 569.78P ×1 · 淨@8.09 Credit'], grossCashflow:809, fees:null, netCashflow:809, realizedPnl:null, status:'open', isUnderlying:false, linkedTradeId:null, strike:655, optType:'P', underlyingPriceAtEntry:686.96, entryPremiumPerShare:8.09, entryPriceSource:'手動·下單當下報價(TOS)', ivPercentile:42.27, impliedVol:47.14, ivSource:'TOS watchlist IV 欄', entryNote:'11/12 開新一組摩天輪(第一)· QQQ 686.96 · 淨 credit @8.09 · 保護腿 569.78P', trigger:'QQQ 回檔 · 開新一組 bull put spread 收租', reason:'2.0 條件:收租型賣權價差(第一)· 655P/569.78P · 保護腿 569.78P', note:'第 C15 組(第一)· 655P/569.78P 12/18 · 淨 credit +$809 · 36 DTE · 收租型賣權價差' },
     { id:'T_NVDAPMCC_155C_LEAPS', strategyId:'NVDA_PMCC', strategyName:'NVDA PMCC', ledgerType:'pmcc', structureType:'PMCC', cycleId:'NVDA_PMCC_SC_155C_LEAPS', cycleLabel:'NVDA PMCC · 155C 價內 LEAPS · 2029/01 · 嘉信', account:'sc', ticker:'NVDA', action:'OPEN', tradeDate:'2026-11-12', expiry:'2029-01-19', quantity:1, legs:['BUY 155C ×1 @50.10'], grossCashflow:-5010, fees:null, netCashflow:-5010, realizedPnl:null, status:'open', isUnderlying:true, linkedTradeId:null, strike:155, optType:'C', underlyingPriceAtEntry:159.965, entryPremiumPerShare:50.10, entryPriceSource:'手動·下單當下報價(TOS)', ivPercentile:100, impliedVol:100, ivSource:'TOS watchlist IV 欄（極端 ~100）', entryDelta:0.68, entryNote:'11/12 NVDA 合理價抵達安全邊際 · NVDA 159.965(−7.92%)· 極端IV · BUY 155C @50.10 · 價內約3%(Δ0.68)· 選長天期 2029/01 進場降 theta 壓力', trigger:'NVDA 大跌(159.965 · −7.92%)· BOS 合理價抵達安全邊際 · 長天期價內 LEAPS 進場', reason:'NVDA PMCC 底層 LEAPS(嘉信)· 合理價安全邊際進場 · 155C 內在值約 $5 · Δ~0.68 · 長天期(798 DTE)降 theta', note:'NVDA PMCC LEAPS 底層(嘉信)· NVDA 159.965 vs 155 · 約798 DTE · 配 SELL 191C 12/18 短腿' },
-    { id:'T_NVDAPMCC_191C_O', strategyId:'NVDA_PMCC', strategyName:'NVDA PMCC', ledgerType:'pmcc', structureType:'PMCC', cycleId:'NVDA_PMCC_SC_191C', cycleLabel:'NVDA PMCC · SELL 191C · 12/18 · 嘉信', account:'sc', ticker:'NVDA', action:'OPEN', tradeDate:'2026-11-12', expiry:'2026-12-18', quantity:1, legs:['SELL 191C ×1 @3.00'], grossCashflow:300, fees:null, netCashflow:300, realizedPnl:null, status:'open', isUnderlying:false, linkedTradeId:null, strike:191, optType:'C', underlyingPriceAtEntry:159.965, entryPremiumPerShare:3.00, entryPriceSource:'手動·下單當下報價(TOS)', ivPercentile:100, impliedVol:100, ivSource:'TOS watchlist IV 欄（極端 ~100）', entryDelta:-0.20, entryNote:'11/12 NVDA PMCC 短腿(嘉信)· NVDA 159.965 · SELL 191C @3.00 · 履約遠OTM(191 vs 160)', trigger:'PMCC sell call 腿 · 極端IV 收租', reason:'給 155C LEAPS 的收租短 Call 腿(嘉信)· 191 遠OTM · 極端IV 權利金肥', note:'NVDA PMCC SELL CALL 腿(嘉信)· 191C 12/18 ×1 @3.00 (+$300)· 36 DTE · Δ−0.20 · 極端IV(~100)進場' },
-    { id:'T_NVDAW_C1_O', strategyId:'NVDA_豪華摩天輪', strategyName:'NVDA 豪華摩天輪', ledgerType:'wheel', cycleId:'NVDA_WHEEL_SC_C1', cycleLabel:'NVDA 豪華摩天輪 · C1 · 135P/107P × 1 · 12/18 · 嘉信', account:'sc', ticker:'NVDA', action:'OPEN', tradeDate:'2026-11-12', expiry:'2026-12-18', quantity:1, legs:['SELL 135P ×1 @4.43','BUY 107P ×1 @0.86 · 淨@3.57 Credit'], grossCashflow:357, fees:null, netCashflow:357, realizedPnl:null, status:'open', isUnderlying:false, linkedTradeId:null, strike:135, optType:'P', underlyingPriceAtEntry:159.965, entryPremiumPerShare:3.57, entryPriceSource:'手動·下單當下報價(TOS)', ivPercentile:100, impliedVol:100, ivSource:'TOS watchlist IV 欄（極端 ~100）', entryDelta:-0.18, entryNote:'11/12 NVDA 開第一組摩天輪(嘉信)· NVDA 159.965(−7.92%)· 極端IV · SELL 135P/BUY 107P · 淨 credit @3.57 · 135P 履約約 −16% 價外', trigger:'NVDA 大跌(159.965 · −7.92%)· 極端IV · 開新一組 bull put spread 收租', reason:'2.0 條件:下跌+極端IV,NVDA 首組摩天輪(嘉信)· 135P/107P 收租 · 保護腿 107P', note:'NVDA 第 C1 組(嘉信)· 135P/107P 12/18 · 淨 credit +$357 · 36 DTE · 收租型賣權價差 · 極端IV 進場' },
+    { id:'T_NVDAPMCC_191C_O', strategyId:'NVDA_PMCC', strategyName:'NVDA PMCC', ledgerType:'pmcc', structureType:'PMCC', cycleId:'NVDA_PMCC_SC_191C', cycleLabel:'NVDA PMCC · SELL 191C · 12/18 · 嘉信', account:'sc', ticker:'NVDA', action:'OPEN', tradeDate:'2026-11-12', expiry:'2026-12-18', quantity:1, legs:['SELL 191C ×1 @3.00'], grossCashflow:300, fees:null, netCashflow:300, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_NVDAPMCC_191C_C', strike:191, optType:'C', underlyingPriceAtEntry:159.965, entryPremiumPerShare:3.00, entryPriceSource:'手動·下單當下報價(TOS)', ivPercentile:100, impliedVol:100, ivSource:'TOS watchlist IV 欄（極端 ~100）', entryDelta:-0.20, entryNote:'11/12 NVDA PMCC 短腿(嘉信)· NVDA 159.965 · SELL 191C @3.00 · 履約遠OTM(191 vs 160)', trigger:'PMCC sell call 腿 · 極端IV 收租', reason:'給 155C LEAPS 的收租短 Call 腿(嘉信)· 191 遠OTM · 極端IV 權利金肥', note:'NVDA PMCC SELL CALL 腿(嘉信)· 191C 12/18 ×1 @3.00 (+$300)· 36 DTE · Δ−0.20 · 極端IV(~100)進場' },
+    { id:'T_NVDAW_C1_O', strategyId:'NVDA_豪華摩天輪', strategyName:'NVDA 豪華摩天輪', ledgerType:'wheel', cycleId:'NVDA_WHEEL_SC_C1', cycleLabel:'NVDA 豪華摩天輪 · C1 · 135P/107P × 1 · 12/18 · 嘉信', account:'sc', ticker:'NVDA', action:'OPEN', tradeDate:'2026-11-12', expiry:'2026-12-18', quantity:1, legs:['SELL 135P ×1 @4.43','BUY 107P ×1 @0.86 · 淨@3.57 Credit'], grossCashflow:357, fees:null, netCashflow:357, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_NVDAW_C1_C', strike:135, optType:'P', underlyingPriceAtEntry:159.965, entryPremiumPerShare:3.57, entryPriceSource:'手動·下單當下報價(TOS)', ivPercentile:100, impliedVol:100, ivSource:'TOS watchlist IV 欄（極端 ~100）', entryDelta:-0.18, entryNote:'11/12 NVDA 開第一組摩天輪(嘉信)· NVDA 159.965(−7.92%)· 極端IV · SELL 135P/BUY 107P · 淨 credit @3.57 · 135P 履約約 −16% 價外', trigger:'NVDA 大跌(159.965 · −7.92%)· 極端IV · 開新一組 bull put spread 收租', reason:'2.0 條件:下跌+極端IV,NVDA 首組摩天輪(嘉信)· 135P/107P 收租 · 保護腿 107P', note:'NVDA 第 C1 組(嘉信)· 135P/107P 12/18 · 淨 credit +$357 · 36 DTE · 收租型賣權價差 · 極端IV 進場' },
+    // ── 2026-11-13 NVDA 財報前管理：平摩天輪(獲利了結) + 買回 191C(解開 LEAPS 上限) ──
+    { id:'T_NVDAW_C1_C', strategyId:'NVDA_豪華摩天輪', strategyName:'NVDA 豪華摩天輪', ledgerType:'wheel', cycleId:'NVDA_WHEEL_SC_C1', cycleLabel:'NVDA 豪華摩天輪 · C1 · 135P/107P · 平倉 · 嘉信', account:'sc', ticker:'NVDA', action:'CLOSE', tradeDate:'2026-11-13', expiry:'2026-12-18', quantity:1, legs:['BUY TO CLOSE 135P ×1 @2.61','SELL TO CLOSE 107P ×1 @0.54 · 淨@2.07 Debit'], grossCashflow:-207, fees:null, netCashflow:-207, realizedPnl:150, pct:42.0, status:'closed', isUnderlying:false, linkedTradeId:'T_NVDAW_C1_O', ledgerId:'CF_M11_002', note:'NVDA C1 135P/107P · 11/12開@3.57(+$357)· 11/13平@2.07(-$207)· 實現+$150(42%)· 財報(11/17)前一天獲利了結,解除下行承接風險 · NVDA 162.90' },
+    { id:'T_NVDAPMCC_191C_C', strategyId:'NVDA_PMCC', strategyName:'NVDA PMCC', ledgerType:'pmcc', structureType:'PMCC', cycleId:'NVDA_PMCC_SC_191C', cycleLabel:'NVDA PMCC · 191C · 買回 · 嘉信', account:'sc', ticker:'NVDA', action:'CLOSE', tradeDate:'2026-11-13', expiry:'2026-12-18', quantity:1, legs:['BUY TO CLOSE 191C ×1 @3.35'], grossCashflow:-335, fees:null, netCashflow:-335, realizedPnl:-35, pct:-11.7, status:'closed', isUnderlying:false, linkedTradeId:'T_NVDAPMCC_191C_O', ledgerId:'CF_M11_003', note:'NVDA PMCC 短腿 191C · 11/12賣@3.00(+$300)· 11/13買回@3.35(-$335)· 實現−$35 · 財報前解開 LEAPS 上限(MSFT打法)· 留 155C LEAPS 裸多過財報 · NVDA 162.90' },
     { id:'T_QQQW_C8_C', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', cycleId:'QQQ_WHEEL_SC_C8', cycleLabel:'QQQ 豪華摩天輪 · C8 · 680P/580P · 09/25 到期歸零', account:'sc', ticker:'QQQ', action:'CLOSE', tradeDate:'2026-09-25', expiry:'2026-09-25', quantity:1, legs:['680P/580P 09/25 到期 · QQQ 744.50 >> 680P 全OTM · 雙腿歸零'], grossCashflow:0, fees:null, netCashflow:0, realizedPnl:665, pct:100, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_C8_O', ledgerId:'CF_M09_007', note:'C8 680P/580P 09/25 到期 · QQQ 744.50 遠高於 680P 全OTM · 自動歸零收割 · Theta 完整落袋 +$665 (100%)' },
     { id:'T_QQQW_C6_O', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', cycleId:'QQQ_WHEEL_SC_C6', cycleLabel:'QQQ 豪華摩天輪 · C6 · 687P/600P × 1 · 08/14 · 嘉信', account:'sc', ticker:'QQQ', action:'OPEN', tradeDate:'2026-07-10', expiry:'2026-08-14', quantity:1, legs:['SELL 687P @9.70 (+$970)','BUY 600P @1.64 (-$164)'], grossCashflow:806, fees:null, netCashflow:806, realizedPnl:null, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_C6_C', note:'SPY C3 平倉後換開 · 首次於嘉信開 QQQ 輪 · Δ0.25 · 未扣費 · 08/14 到期歸零' },
     { id:'T_QQQW_C6_C', strategyId:'QQQ_豪華摩天輪', strategyName:'QQQ 豪華摩天輪', ledgerType:'wheel', cycleId:'QQQ_WHEEL_SC_C6', cycleLabel:'QQQ 豪華摩天輪 · C6 · 687P/600P · 08/14 到期歸零', account:'sc', ticker:'QQQ', action:'CLOSE', tradeDate:'2026-08-14', expiry:'2026-08-14', quantity:1, legs:['687P/600P 08/14 到期 · QQQ 731.07 遠高於 687P · 雙腿歸零'], grossCashflow:0, fees:null, netCashflow:0, realizedPnl:806, pct:100, status:'closed', isUnderlying:false, linkedTradeId:'T_QQQW_C6_O', ledgerId:'CF_M08_005', note:'C6 687P/600P 08/14 到期 · QQQ 731.07 >> 687P 全OTM · 自動歸零收割 · Theta 完整落袋 +$806 (100%)' },
@@ -2177,7 +2183,7 @@ var _TV_SPY_BARS = [
   {"date":"2026-08-06","close":768.56},{"date":"2026-08-07","close":773.26},
   {"date":"2026-08-10","close":773.03},{"date":"2026-08-11","close":770.56},
   {"date":"2026-08-12","close":772.49},{"date":"2026-08-13","close":777.88},
-  {"date":"2026-08-14","close":776.34},{"date":"2026-08-17","close":772.67},{"date":"2026-08-18","close":767.45},{"date":"2026-08-19","close":769.06},{"date":"2026-08-20","close":762.60},{"date":"2026-08-21","close":765.72},{"date":"2026-08-24","close":763.47},{"date":"2026-08-25","close":765.91},{"date":"2026-08-26","close":766.08},{"date":"2026-08-27","close":771.10},{"date":"2026-08-28","close":769.35},{"date":"2026-08-31","close":767.05},{"date":"2026-09-01","close":761.78},{"date":"2026-09-02","close":765.16},{"date":"2026-09-03","close":773.17},{"date":"2026-09-04","close":770.19},{"date":"2026-09-08","close":765.96},{"date":"2026-09-09","close":762.40},{"date":"2026-09-10","close":757.83},{"date":"2026-09-11","close":764.29},{"date":"2026-09-12","close":760.88},{"date":"2026-09-15","close":757.39},{"date":"2026-09-16","close":754.05},{"date":"2026-09-17","close":762.60},{"date":"2026-09-18","close":761.69},{"date":"2026-09-19","close":773.50},{"date":"2026-09-22","close":773.38},{"date":"2026-09-23","close":767.81},{"date":"2026-09-24","close":767.18},{"date":"2026-09-25","close":771.35},{"date":"2026-09-28","close":765.61},{"date":"2026-09-29","close":764.20},{"date":"2026-09-30","close":762.63},{"date":"2026-10-01","close":763.99},{"date":"2026-10-02","close":769.64},{"date":"2026-10-05","close":774.83},{"date":"2026-10-06","close":779.09},{"date":"2026-10-07","close":777.22},{"date":"2026-10-08","close":773.93},{"date":"2026-10-09","close":778.57},{"date":"2026-10-12","close":778.10},{"date":"2026-10-13","close":778.01},{"date":"2026-10-14","close":769.60},{"date":"2026-10-15","close":771.79},{"date":"2026-10-16","close":763.25},{"date":"2026-10-19","close":766.48},{"date":"2026-10-20","close":769.05},{"date":"2026-10-21","close":773.09},{"date":"2026-10-22","close":763.96},{"date":"2026-10-23","close":759.97},{"date":"2026-10-26","close":765.37},{"date":"2026-10-27","close":769.66},{"date":"2026-10-28","close":772.31},{"date":"2026-10-29","close":769.36},{"date":"2026-10-30","close":755.72},{"date":"2026-11-02","close":752.10},{"date":"2026-11-03","close":754.35},{"date":"2026-11-04","close":766.81},{"date":"2026-11-05","close":733.00},{"date":"2026-11-06","close":735.29},{"date":"2026-11-09","close":752.69},{"date":"2026-11-10","close":749.92},{"date":"2026-11-11","close":759.81},{"date":"2026-11-12","close":757.12}
+  {"date":"2026-08-14","close":776.34},{"date":"2026-08-17","close":772.67},{"date":"2026-08-18","close":767.45},{"date":"2026-08-19","close":769.06},{"date":"2026-08-20","close":762.60},{"date":"2026-08-21","close":765.72},{"date":"2026-08-24","close":763.47},{"date":"2026-08-25","close":765.91},{"date":"2026-08-26","close":766.08},{"date":"2026-08-27","close":771.10},{"date":"2026-08-28","close":769.35},{"date":"2026-08-31","close":767.05},{"date":"2026-09-01","close":761.78},{"date":"2026-09-02","close":765.16},{"date":"2026-09-03","close":773.17},{"date":"2026-09-04","close":770.19},{"date":"2026-09-08","close":765.96},{"date":"2026-09-09","close":762.40},{"date":"2026-09-10","close":757.83},{"date":"2026-09-11","close":764.29},{"date":"2026-09-12","close":760.88},{"date":"2026-09-15","close":757.39},{"date":"2026-09-16","close":754.05},{"date":"2026-09-17","close":762.60},{"date":"2026-09-18","close":761.69},{"date":"2026-09-19","close":773.50},{"date":"2026-09-22","close":773.38},{"date":"2026-09-23","close":767.81},{"date":"2026-09-24","close":767.18},{"date":"2026-09-25","close":771.35},{"date":"2026-09-28","close":765.61},{"date":"2026-09-29","close":764.20},{"date":"2026-09-30","close":762.63},{"date":"2026-10-01","close":763.99},{"date":"2026-10-02","close":769.64},{"date":"2026-10-05","close":774.83},{"date":"2026-10-06","close":779.09},{"date":"2026-10-07","close":777.22},{"date":"2026-10-08","close":773.93},{"date":"2026-10-09","close":778.57},{"date":"2026-10-12","close":778.10},{"date":"2026-10-13","close":778.01},{"date":"2026-10-14","close":769.60},{"date":"2026-10-15","close":771.79},{"date":"2026-10-16","close":763.25},{"date":"2026-10-19","close":766.48},{"date":"2026-10-20","close":769.05},{"date":"2026-10-21","close":773.09},{"date":"2026-10-22","close":763.96},{"date":"2026-10-23","close":759.97},{"date":"2026-10-26","close":765.37},{"date":"2026-10-27","close":769.66},{"date":"2026-10-28","close":772.31},{"date":"2026-10-29","close":769.36},{"date":"2026-10-30","close":755.72},{"date":"2026-11-02","close":752.10},{"date":"2026-11-03","close":754.35},{"date":"2026-11-04","close":766.81},{"date":"2026-11-05","close":733.00},{"date":"2026-11-06","close":735.29},{"date":"2026-11-09","close":752.69},{"date":"2026-11-10","close":749.92},{"date":"2026-11-11","close":759.81},{"date":"2026-11-12","close":757.12},{"date":"2026-11-13","close":754.37},{"date":"2026-11-16","close":739.95}
 ]
 
 function fetchSPYHistory() {
@@ -5017,6 +5023,7 @@ function renderHome(m) {
   try { renderDrawdownDetail(m) } catch(e) { console.error('[renderDrawdownDetail]', e) }   // V13.84
   renderOxygenMeter(m)
   try { renderRiskLimitMeter(m) } catch(e) { console.error('[renderRiskLimitMeter]', e) }   // V13.9 個股風控額度計
+  try { renderLeapsAvgCost(m) } catch(e) { console.error('[renderLeapsAvgCost]', e) }   // V13.91 QQQ LEAPS 承接均價
   renderMonthlyResults()   // V13.74 首頁月度結果 accordion（取代持倉）
   buildMainChart(curAcct, curRange)
 }
@@ -5176,6 +5183,63 @@ function renderRiskLimitMeter(m) {
     rowsHtml +
     (rl.assignmentNote ? '<div style="font-size:9px;color:#6A7288;margin-top:8px;padding-top:8px;border-top:.5px solid rgba(255,255,255,0.05);line-height:1.5">⚠️ ' + rl.assignmentNote + '</div>' : '') +
     (rl.indirectNote ? '<div style="font-size:9px;color:#454B5E;margin-top:5px;line-height:1.5">ℹ️ ' + rl.indirectNote + '</div>' : '') +
+    '</div>'
+}
+
+// ── V13.91 QQQ LEAPS 承接均價：從 trades[] 即時派生，每次承接自動更新 ──
+function renderLeapsAvgCost(m) {
+  var el = document.getElementById('home-leapscost-section')
+  if (!el) return
+  var S = PORTFOLIO_STATE
+  if (!S || !S.trades) { el.innerHTML = ''; return }
+  var leaps = S.trades.filter(function(t){
+    return t.ticker==='QQQ' && t.action==='OPEN' && t.status==='open' && t.isUnderlying===true
+  })
+  if (!leaps.length) { el.innerHTML = ''; return }
+
+  var accs = [{ key:'ft', name:'第一證券', col:'#3FB950' }, { key:'sc', name:'嘉信', col:'#388BFD' }]
+  var blocks = accs.map(function(a){
+    var list = leaps.filter(function(t){ return t.account===a.key })
+    if (!list.length) return ''
+    var sumU=0, nU=0, sumP=0, nP=0
+    var rows = list.map(function(t){
+      var u=t.underlyingPriceAtEntry, p=t.entryPremiumPerShare
+      if (typeof u==='number'){ sumU+=u; nU++ }
+      if (typeof p==='number'){ sumP+=p; nP++ }
+      var exp = (t.expiry||'').slice(0,7)
+      return '<div style="display:flex;justify-content:space-between;font-size:11px;padding:3px 0;border-top:.5px solid rgba(255,255,255,0.05)">' +
+        '<span style="color:#9BA3B8">' + (t.strike||'?') + 'C <span style="color:#5A6278">' + exp + '</span></span>' +
+        '<span style="color:#C8CEDC">QQQ@' + (typeof u==='number'?u.toFixed(2):'—') + '</span>' +
+        '<span style="color:#5A6278">權$' + (typeof p==='number'?p.toFixed(2):'—') + '</span>' +
+        '</div>'
+    }).join('')
+    var avgU = nU ? sumU/nU : 0, avgP = nP ? sumP/nP : 0
+    var allSame = list.every(function(t){ return t.strike===list[0].strike })
+    var mixNote = (list.length>1 && !allSame) ? ' · 含不同履約,均價僅參考' : ''
+    return '<div style="margin-bottom:14px">' +
+      '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px">' +
+        '<span style="font-size:12px;font-weight:600;color:' + a.col + '">' + a.name +
+          ' <span style="color:#5A6278;font-weight:400;font-size:10px">' + list.length + ' 張</span></span>' +
+        '<span style="font-size:14px;font-weight:700;color:#E6EAF4">平均 QQQ ' + avgU.toFixed(2) + '</span>' +
+      '</div>' +
+      rows +
+      '<div style="font-size:9px;color:#5A6278;margin-top:4px">平均權利金 $' + avgP.toFixed(2) + '/股' + mixNote + '</div>' +
+    '</div>'
+  }).join('')
+
+  // 跨帳戶同一張 600C 的總承接均價
+  var c600 = leaps.filter(function(t){ return t.strike===600 })
+  var blend600 = ''
+  if (c600.length>1) {
+    var s=0,n=0; c600.forEach(function(t){ if(typeof t.underlyingPriceAtEntry==='number'){ s+=t.underlyingPriceAtEntry; n++ } })
+    if (n) blend600 = '<div style="font-size:10px;color:#9BA3B8;margin-top:2px;padding-top:9px;border-top:.5px solid rgba(255,255,255,0.06)">跨帳戶 600C（' + n + ' 張）平均承接 QQQ <b style="color:#E6EAF4">' + (s/n).toFixed(2) + '</b></div>'
+  }
+
+  el.innerHTML =
+    '<div class="sec">QQQ LEAPS 承接均價</div>' +
+    '<div class="card-sm" style="margin:0 16px 10px;padding:14px 16px;background:#141820;border-radius:12px;border:.5px solid rgba(255,255,255,0.06)">' +
+    '<div style="font-size:10px;color:#5A6278;margin-bottom:11px;line-height:1.5">各帳戶 BUY CALL 底層的平均進場股價(由 trades[] 即時派生·承接即自動更新)</div>' +
+    blocks + blend600 +
     '</div>'
 }
 
